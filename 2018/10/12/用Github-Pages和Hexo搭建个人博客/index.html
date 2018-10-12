@@ -15,18 +15,18 @@
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
 <meta property="og:description" content="用Github Pages和Hexo搭建个人博客前言看了很多个人用户的博客，但感觉github.io这个域名后缀非常有感觉，于是十分好奇这个域名和GitHub有什么关系，了解后才知道这个叫做Github Pages的东西。于是用了一点时间参考前人的文章，把个人博客搭建在了GitHub上，在这里小小记录一下。 为什么要使用Github Pages 可以绑定你的域名(但暂时貌似只能绑定一个)。 简单快">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/10/12/用Github-Pages和Hexo搭建个人博客/&&&SFLOCALFILEPATH&&&2418E85A-1184-4963-9691-F0D6CB2E1187.png">
-<meta property="og:image" content="http://yoursite.com/2018/10/12/用Github-Pages和Hexo搭建个人博客/&&&SFLOCALFILEPATH&&&3C86A291-BD89-4D34-A4C0-709E5FF72E54.png">
-<meta property="og:image" content="http://yoursite.com/2018/10/12/用Github-Pages和Hexo搭建个人博客/&&&SFLOCALFILEPATH&&&1716CE56-EA44-4D6D-BBB5-477C9001A589.png">
-<meta property="og:image" content="http://yoursite.com/2018/10/12/用Github-Pages和Hexo搭建个人博客/&&&SFLOCALFILEPATH&&&51BEAA50-44B5-4A29-87E8-52EFDC0DAE11.png">
+<meta property="og:image" content="https://i.postimg.cc/BnfRktcs/2418-E85-A-1184-4963-9691-F0-D6-CB2-E1187.png">
+<meta property="og:image" content="https://i.postimg.cc/G3QQdtCd/3-C86-A291-BD89-4-D34-A4-C0-709-E5-FF72-E54.png">
+<meta property="og:image" content="https://i.postimg.cc/28d3PLR7/1716-CE56-EA44-4-D6-D-BBB5-477-C9001-A589.png">
+<meta property="og:image" content="https://i.postimg.cc/wTkTWKLW/51-BEAA50-44-B5-4-A29-87-E8-52-EFDC0-DAE11.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/12/用Github-Pages和Hexo搭建个人博客/&&&SFLOCALFILEPATH&&&DD133F7D-52A2-4BB4-A14A-DF953A877E11.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/12/用Github-Pages和Hexo搭建个人博客/&&&SFLOCALFILEPATH&&&6F3FCF2F-1913-4124-8EBB-C1B4A5A81C6D.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/12/用Github-Pages和Hexo搭建个人博客/&&&SFLOCALFILEPATH&&&8B513DFC-2169-4029-A2E1-8566DC8E3BCC.png">
-<meta property="og:updated_time" content="2018-10-12T08:34:13.614Z">
+<meta property="og:updated_time" content="2018-10-12T08:40:10.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Github Pages和Hexo搭建个人博客">
 <meta name="twitter:description" content="用Github Pages和Hexo搭建个人博客前言看了很多个人用户的博客，但感觉github.io这个域名后缀非常有感觉，于是十分好奇这个域名和GitHub有什么关系，了解后才知道这个叫做Github Pages的东西。于是用了一点时间参考前人的文章，把个人博客搭建在了GitHub上，在这里小小记录一下。 为什么要使用Github Pages 可以绑定你的域名(但暂时貌似只能绑定一个)。 简单快">
-<meta name="twitter:image" content="http://yoursite.com/2018/10/12/用Github-Pages和Hexo搭建个人博客/&&&SFLOCALFILEPATH&&&2418E85A-1184-4963-9691-F0D6CB2E1187.png">
+<meta name="twitter:image" content="https://i.postimg.cc/BnfRktcs/2418-E85-A-1184-4963-9691-F0-D6-CB2-E1187.png">
   
     <link rel="alternate" href="/atom.xml" title="Zealoft&#39;s Blog" type="application/atom+xml">
   
@@ -181,14 +181,14 @@ ga('send', 'pageview');
 <pre><code>npm install hexo-cli -g
 
 npm install hexo-deployer-git --save
-</code></pre><p>第一句是安装hexo，第二句是安装hexo部署到git page的deployer，两者都需要安装。<br>如下图即安装完成。<br><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;2418E85A-1184-4963-9691-F0D6CB2E1187.png" alt=""></p>
+</code></pre><p>第一句是安装hexo，第二句是安装hexo部署到git page的deployer，两者都需要安装。<br>如下图即安装完成。<br><a href="https://postimg.cc/LnvyZ9b0" target="_blank" rel="noopener"><img src="https://i.postimg.cc/BnfRktcs/2418-E85-A-1184-4963-9691-F0-D6-CB2-E1187.png" alt="2418-E85-A-1184-4963-9691-F0-D6-CB2-E1187.png"></a></p>
 <h2 id="二、Hexo初始化配置"><a href="#二、Hexo初始化配置" class="headerlink" title="二、Hexo初始化配置"></a>二、Hexo初始化配置</h2><h3 id="创建Hexo文件夹"><a href="#创建Hexo文件夹" class="headerlink" title="创建Hexo文件夹"></a>创建Hexo文件夹</h3><p>进行完上述步骤以后，Hexo就算顺利安装完成了。接下来就可以搭建自己的个人博客了。<br>可以根据自己的喜好新建目录，在终端下<code>cd</code>到该目录，执行以下操作。<br><code>hexo init</code><br><strong>上述命令的前提是该目录为空，如果不为空则会提示错误信息。</strong><br>命令执行完毕，Hexo将会在指定文件夹中新建所需要的文件。Hexo文件夹下的目录如下：</p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;3C86A291-BD89-4D34-A4C0-709E5FF72E54.png" alt=""></p>
+<p><a href="https://postimg.cc/LhJfVH5b" target="_blank" rel="noopener"><img src="https://i.postimg.cc/G3QQdtCd/3-C86-A291-BD89-4-D34-A4-C0-709-E5-FF72-E54.png" alt="3-C86-A291-BD89-4-D34-A4-C0-709-E5-FF72-E54.png"></a></p>
 <h3 id="本地查看效果"><a href="#本地查看效果" class="headerlink" title="本地查看效果"></a>本地查看效果</h3><p>执行下面语句，执行完即可登录localhost:4000查看效果</p>
 <pre><code>hexo generate
 hexo server
 </code></pre><p>登录localhost:4000，即可看到本地的效果如下： </p>
-<p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;1716CE56-EA44-4D6D-BBB5-477C9001A589.png" alt=""></p>
+<p><a href="https://postimg.cc/zVBJhBfy" target="_blank" rel="noopener"><img src="https://i.postimg.cc/28d3PLR7/1716-CE56-EA44-4-D6-D-BBB5-477-C9001-A589.png" alt="1716-CE56-EA44-4-D6-D-BBB5-477-C9001-A589.png"></a></p>
 <p>以后，如果想在本地查看博客的效果，只需要输入下列命令</p>
 <pre><code>hexo clean
 hexo g -s
@@ -196,7 +196,7 @@ hexo server
 </code></pre><p>再前往访问localhost:4000即可完成。其中第一条命令是为了清除hexo目录中的缓存信息，防止出现某些错误。</p>
 <h1 id="将博客部署到Github-Pages上"><a href="#将博客部署到Github-Pages上" class="headerlink" title="将博客部署到Github Pages上"></a>将博客部署到Github Pages上</h1><p>那么现在本地的博客已经搭建起来了，但是我们只可以通过本地连接查看我们的博客。那么我们现在需要做的就是把本地的博客发布到服务器上，让别人也可以连接我们的博客，而Github Pages就帮我完成了这件事情。但是Github Pages的代码就是寄存在Github上面的。那么接下来我们需要在Github上面创建一个新的项目。</p>
 <h2 id="一、登录Github账户"><a href="#一、登录Github账户" class="headerlink" title="一、登录Github账户"></a>一、登录Github账户</h2><p>不用多说，访问<a href="github.com">Github首页</a>，登录或者注册自己的账户。<br>目前，国内用户应该可以正常访问Github。</p>
-<h2 id="二、创建项目代码库"><a href="#二、创建项目代码库" class="headerlink" title="二、创建项目代码库"></a>二、创建项目代码库</h2><p>1.注册完登录后，创建一个我们自己的Github Pages项目。点击<a href="https://github.com/new" target="_blank" rel="noopener">New repository</a>。<br>2.创建新的repository时，要注意repository的名称必须是username.github.io，比如此处我的用户名是Zealoft，那么名称就必须是Zealoft.github.io。<br><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;51BEAA50-44B5-4A29-87E8-52EFDC0DAE11.png" alt=""></p>
+<h2 id="二、创建项目代码库"><a href="#二、创建项目代码库" class="headerlink" title="二、创建项目代码库"></a>二、创建项目代码库</h2><p>1.注册完登录后，创建一个我们自己的Github Pages项目。点击<a href="https://github.com/new" target="_blank" rel="noopener">New repository</a>。<br>2.创建新的repository时，要注意repository的名称必须是username.github.io，比如此处我的用户名是Zealoft，那么名称就必须是Zealoft.github.io。<br><a href="https://postimg.cc/bsshJB6b" target="_blank" rel="noopener"><img src="https://i.postimg.cc/wTkTWKLW/51-BEAA50-44-B5-4-A29-87-E8-52-EFDC0-DAE11.png" alt="51-BEAA50-44-B5-4-A29-87-E8-52-EFDC0-DAE11.png"></a></p>
 <h2 id="三、配置SSH密钥"><a href="#三、配置SSH密钥" class="headerlink" title="三、配置SSH密钥"></a>三、配置SSH密钥</h2><p>配置Github的SSH密钥可以让本地git项目与远程的github建立联系，让我们在本地写了代码之后直接通过git操作就可以实现本地代码库与Github代码库同步。操作如下：</p>
 <h3 id="第一步-看看是否存在SSH密钥-keys"><a href="#第一步-看看是否存在SSH密钥-keys" class="headerlink" title="第一步 看看是否存在SSH密钥(keys)"></a>第一步 看看是否存在SSH密钥(keys)</h3><p>首先，我们需要看看是否看看本机是否存在SSH keys,打开Git Bash,并运行:<br><code>$ cd ~/. ssh</code><br>在Mac OS下，命令改为<br><code>cd /Users/your_username/.ssh</code><br>检查你本机用户home目录下是否存在.ssh目录</p>
 <p>如果，不存在此目录，则进行第二步操作，否则，你本机已经存在ssh公钥和私钥，可以略过第二步，直接进入第三步操作。</p>
