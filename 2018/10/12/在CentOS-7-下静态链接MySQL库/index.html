@@ -17,7 +17,9 @@
 <meta property="og:description" content="写在前面的一些废话什么是库？能吃吗？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。现实中每个程序都要依赖很多基础的">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.postimg.cc/HsFX93Px/page3image12980288.png">
-<meta property="og:updated_time" content="2018-10-12T11:11:02.850Z">
+<meta property="og:image" content="https://i.postimg.cc/wByRq57S/page1image12963488.png">
+<meta property="og:image" content="https://i.postimg.cc/gJyJjgdB/page3image13008112.png">
+<meta property="og:updated_time" content="2018-10-12T14:15:06.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在CentOS 7 下静态链接MySQL库">
 <meta name="twitter:description" content="写在前面的一些废话什么是库？能吃吗？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。现实中每个程序都要依赖很多基础的">
@@ -184,6 +186,32 @@ int main()
 }
 
 </code></pre><p><a href="https://postimg.cc/MvbnW0w2" target="_blank" rel="noopener"><img src="https://i.postimg.cc/HsFX93Px/page3image12980288.png" alt="page3image12980288.png"></a></p>
+<h1 id="在CentOS-7下静态链接MySQL库"><a href="#在CentOS-7下静态链接MySQL库" class="headerlink" title="在CentOS 7下静态链接MySQL库"></a>在CentOS 7下静态链接MySQL库</h1><h1 id="写在前面的一些废话-1"><a href="#写在前面的一些废话-1" class="headerlink" title="写在前面的一些废话"></a>写在前面的一些废话</h1><h2 id="什么是库？能吃吗？-1"><a href="#什么是库？能吃吗？-1" class="headerlink" title="什么是库？能吃吗？"></a>什么是库？能吃吗？</h2><p>事实上，在windows平台和linux平台下都大量存在着库。<br>本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。<br>由于windows和linux的本质不同，因此二者库的二进制是不兼容的。<br>本文仅限于介绍linux下的库。</p>
+<h2 id="库的意义是什么？-1"><a href="#库的意义是什么？-1" class="headerlink" title="库的意义是什么？"></a>库的意义是什么？</h2><p>库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。<br>现实中每个程序都要依赖很多基础的底层库，不可能每个人的代码都从零开始，因此库的存在意义非同寻常。<br>共享库的好处是，不同的应用程序如果调用相同的库，那么在内存里只需要有一份该共享库的实例。</p>
+<h2 id="库文件有什么规范吗？-1"><a href="#库文件有什么规范吗？-1" class="headerlink" title="库文件有什么规范吗？"></a>库文件有什么规范吗？</h2><p>在linux下，库文件一般放在<code>/usr/lib /lib</code>下。而在我的CentOS 7环境里，库文件大多数被放在了<code>/usr/lib64</code>目录下。<br>静态库的名字一般为<code>libxxxx.a</code>，其中xxxx是该lib的名称<br>动态库的名字一般为<code>libxxxx.so.major.minor</code>，xxxx是该lib的名称，major是主版本号， minor是副版本号</p>
+<h2 id="什么是静态链接？什么是静态库？和动态库的区别是什么？-1"><a href="#什么是静态链接？什么是静态库？和动态库的区别是什么？-1" class="headerlink" title="什么是静态链接？什么是静态库？和动态库的区别是什么？"></a>什么是静态链接？什么是静态库？和动态库的区别是什么？</h2><p>要回答这个问题，我们首先来看一看什么是静态库。<br>在Linux下有两种库，一种是静态库（<em>.a），一种是动态库（</em>.so）（也被叫做共享库），其对应着不同的生成与使用方式。二者的不同点在于代码被载入的时刻不同。<br>静态库的代码在编译过程中已经被载入可执行程序，因此体积较大。<br>共享库的代码是在可执行程序运行时才载入内存的，在编译过程中仅简单的引用，因此代码体积较小。</p>
+<h2 id="怎么让系统找到我写的库？-1"><a href="#怎么让系统找到我写的库？-1" class="headerlink" title="怎么让系统找到我写的库？"></a>怎么让系统找到我写的库？</h2><p>如果安装在<code>/lib</code>或者<code>/usr/lib</code>下，那么ld默认能够找到，无需其他操作。<br>如果安装在其他目录，需要将其添加到<code>/etc/ld.so.cache</code>文件中，步骤如下<br>1.编辑<code>/etc/ld.so.conf</code>文件，加入库文件所在目录的路径<br>2.运行<code>ldconfig</code>，该命令会重建<code>/etc/ld.so.cache</code>文件</p>
+<h2 id="如何知道一个可执行程序依赖哪些库？-1"><a href="#如何知道一个可执行程序依赖哪些库？-1" class="headerlink" title="如何知道一个可执行程序依赖哪些库？"></a>如何知道一个可执行程序依赖哪些库？</h2><p>ldd命令可以查看一个可执行程序依赖的共享库。<br>例如，现在有一个<code>test.c</code>文件，代码十分简单</p>
+<pre><code>//test.c
+#include &lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;Hello,world\n&quot;);
+    return 0;
+}
+
+</code></pre><p><a href="https://postimg.cc/Jy8zKk3q" target="_blank" rel="noopener"><img src="https://i.postimg.cc/wByRq57S/page1image12963488.png" alt="page1image12963488.png"></a></p>
+<p>尝试安装缺失的库</p>
+<pre><code>yum install openssl-static
+yum install zlib-static
+</code></pre><p>安装完后再次编译，发现错误有一定程度的减少，但无法完全消除。一个难以解决的问题是ld程序不断提示缺少krb5库，查询后发现该库已经不再提供static库。<br>这种情况下，我做出了两种选择：</p>
+<h4 id="Choice-1-放弃全静态编译，只静态链接MySQL的部分"><a href="#Choice-1-放弃全静态编译，只静态链接MySQL的部分" class="headerlink" title="Choice 1  放弃全静态编译，只静态链接MySQL的部分"></a>Choice 1  放弃全静态编译，只静态链接MySQL的部分</h4><p>具体的方法是在g++命令中显式指定/usr/lib64中的libmysqlclient.a而不加-static选项进行编译。部分选项如下</p>
+<pre><code>g++ mysql_demo.o -o mysql_demo /usr/lib64/libmysqlclient.a
+</code></pre><p>此时可以生成可执行文件，且对该可执行文件使用ldd命令，发现其中已经不含与mysql有关的库。</p>
+<h4 id="Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件"><a href="#Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件" class="headerlink" title="Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件"></a>Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件</h4><p>朋友告诉我，想要全静态链接MySQL库，需要使用特定版本的libmysqlclient.a文件。因此在下列网址下载mysql-connector-c-devel-6.1.11-1.el6.x86_64.rpm文件<br><code>http://ftp.ntu.edu.tw/MySQL/Downloads/Connector-C/</code><br>解压得到mysql-connector-c-devel.cpio文件，查询资料后发现其依然是压缩文件，使用<code>cpis -idmv &lt; mysql-connector-c-devel.cpio</code>命令解压后得到usr文件夹<br><a href="https://postimg.cc/zbB5PSyn" target="_blank" rel="noopener"><img src="https://i.postimg.cc/gJyJjgdB/page3image13008112.png" alt="page3image13008112.png"></a><br>其中的<code>lib64/mysql</code>文件夹中含有libmysqlclient.a文件，将其发送到Linux目录下，设定链接路径后发现可以顺利使用<code>-static</code>选项进行编译。</p>
+<pre><code>g++ -c mysql_demo.cpp $(mysql_config --cflags)
+g++ -o mysql_demo mysql_demo.o ./libmysqlclient.a /usr/lib/gcc/x86_64-redhat-linux/4.8.2/libstdc++.a -lpthread -lssl -lcrypto -ldl $(LIB_Z) -static
+</code></pre><p>编译后用ldd命令查看可执行文件，提示不是动态可执行文件。</p>
 
         </div>
         <div class="post-reply">
