@@ -451,58 +451,16 @@
       
         
           
-            <h1 id="写在前面的一些废话"><a href="#写在前面的一些废话" class="headerlink" title="写在前面的一些废话"></a>写在前面的一些废话</h1><h2 id="什么是库？能吃吗？"><a href="#什么是库？能吃吗？" class="headerlink" title="什么是库？能吃吗？"></a>什么是库？能吃吗？</h2><p>事实上，在windows平台和linux平台下都大量存在着库。<br>本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。<br>由于windows和linux的本质不同，因此二者库的二进制是不兼容的。<br>本文仅限于介绍linux下的库。</p>
-<h2 id="库的意义是什么？"><a href="#库的意义是什么？" class="headerlink" title="库的意义是什么？"></a>库的意义是什么？</h2><p>库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。<br>现实中每个程序都要依赖很多基础的底层库，不可能每个人的代码都从零开始，因此库的存在意义非同寻常。<br>共享库的好处是，不同的应用程序如果调用相同的库，那么在内存里只需要有一份该共享库的实例。</p>
-<h2 id="库文件有什么规范吗？"><a href="#库文件有什么规范吗？" class="headerlink" title="库文件有什么规范吗？"></a>库文件有什么规范吗？</h2><p>在linux下，库文件一般放在<code>/usr/lib /lib</code>下。而在我的CentOS 7环境里，库文件大多数被放在了<code>/usr/lib64</code>目录下。<br>静态库的名字一般为<code>libxxxx.a</code>，其中xxxx是该lib的名称<br>动态库的名字一般为<code>libxxxx.so.major.minor</code>，xxxx是该lib的名称，major是主版本号， minor是副版本号</p>
-<h2 id="什么是静态链接？什么是静态库？和动态库的区别是什么？"><a href="#什么是静态链接？什么是静态库？和动态库的区别是什么？" class="headerlink" title="什么是静态链接？什么是静态库？和动态库的区别是什么？"></a>什么是静态链接？什么是静态库？和动态库的区别是什么？</h2><p>要回答这个问题，我们首先来看一看什么是静态库。<br>在Linux下有两种库，一种是静态库（<em>.a），一种是动态库（</em>.so）（也被叫做共享库），其对应着不同的生成与使用方式。二者的不同点在于代码被载入的时刻不同。<br>静态库的代码在编译过程中已经被载入可执行程序，因此体积较大。<br>共享库的代码是在可执行程序运行时才载入内存的，在编译过程中仅简单的引用，因此代码体积较小。</p>
-<h2 id="怎么让系统找到我写的库？"><a href="#怎么让系统找到我写的库？" class="headerlink" title="怎么让系统找到我写的库？"></a>怎么让系统找到我写的库？</h2><p>如果安装在<code>/lib</code>或者<code>/usr/lib</code>下，那么ld默认能够找到，无需其他操作。<br>如果安装在其他目录，需要将其添加到<code>/etc/ld.so.cache</code>文件中，步骤如下<br>1.编辑<code>/etc/ld.so.conf</code>文件，加入库文件所在目录的路径<br>2.运行<code>ldconfig</code>，该命令会重建<code>/etc/ld.so.cache</code>文件</p>
-<h2 id="如何知道一个可执行程序依赖哪些库？"><a href="#如何知道一个可执行程序依赖哪些库？" class="headerlink" title="如何知道一个可执行程序依赖哪些库？"></a>如何知道一个可执行程序依赖哪些库？</h2><p>ldd命令可以查看一个可执行程序依赖的共享库。<br>例如，现在有一个<code>test.c</code>文件，代码十分简单</p>
-<pre><code>//test.c
-#include &lt;stdio.h&gt;
-int main()
-{
-    printf(&quot;Hello,world\n&quot;);
-    return 0;
-}
-
-</code></pre><p><a href="https://postimg.cc/MvbnW0w2" target="_blank" rel="noopener"><img src="https://i.postimg.cc/HsFX93Px/page3image12980288.png" alt="page3image12980288.png"></a></p>
-<h1 id="正文部分"><a href="#正文部分" class="headerlink" title="正文部分"></a>正文部分</h1><h2 id="gcc-g-静态编译环境配置"><a href="#gcc-g-静态编译环境配置" class="headerlink" title="gcc/g++静态编译环境配置"></a>gcc/g++静态编译环境配置</h2><h3 id="gcc静态编译环境配置"><a href="#gcc静态编译环境配置" class="headerlink" title="gcc静态编译环境配置"></a>gcc静态编译环境配置</h3><p>yum安装glibc-static库<br><code>yum install glibc-static</code><br>如果不安装上述库，事实上也可以用gcc静态编译简单的c文件，实现方法是使用locate命令在系统中搜索libc.a文件<br><code>locate libc.a</code><br>将该路径拷贝并在gcc中加上-L参数，就可以编译成功<br>假设路径是</p>
-<pre><code>/usr/lib/x86_64-redhat-linux6E/lib64 -static
-</code></pre><p>那么可以使用gcc命令</p>
-<pre><code>$ gcc main_printf.c -o main_printf_static -L/usr/lib/x86_64-redhat-linux6E/lib64 -static
-</code></pre><p>生成可执行文件后，使用ldd命令查看</p>
-<pre><code>ldd main_printf_static
-</code></pre><p>会发现其提示不是动态可执行文件，说明该可执行文件所有的库都已经静态链接到其中。<br>使用size命令查看可执行文件大小</p>
-<pre><code>size main_printf_static
-</code></pre><p>会发现该可执行文件大小远远大于正常生成的可执行文件。</p>
-<p>但使用这种方法，使用g++编译c++文件时就会产生一系列错误</p>
-<hr>
-<p>在使用上述yum命令安装glibc-static库后， 静态编译C文件就不再需要额外的-L选项。</p>
-<h3 id="g-静态编译环境配置"><a href="#g-静态编译环境配置" class="headerlink" title="g++静态编译环境配置"></a>g++静态编译环境配置</h3><p>运行yum安装libstdc++库</p>
-<pre><code>yum install libstdc++-static
-</code></pre><p>安装完后再次编译，就可以顺利通过编译。</p>
-<p>至此，CentOS 7环境的gcc/g++静态编译环境配置顺利完成。</p>
-<h2 id="使用g-静态链接MySQL库到可执行文件中"><a href="#使用g-静态链接MySQL库到可执行文件中" class="headerlink" title="使用g++静态链接MySQL库到可执行文件中"></a>使用g++静态链接MySQL库到可执行文件中</h2><h3 id="使用g-编译含有MySQL函数的代码"><a href="#使用g-编译含有MySQL函数的代码" class="headerlink" title="使用g++编译含有MySQL函数的代码"></a>使用g++编译含有MySQL函数的代码</h3><p>安装mysql c++库<br>todo</p>
-<p>假如当前目录有cpp文件<code>mysql_demo.cpp</code>，其中调用了MySQL的API。<br>首先使用g++编译</p>
-<pre><code>g++ -c mysql_demo.cpp \
-    $(shell mysql_config --cflags)
-</code></pre><p>值得一提的是，MySQL提供了路径的shell config命令，上述参数<code>$(shell mysql_config --cflags)</code>就是调用了该条命令，把所需的库自动加入到g++命令当中。<br>然后使用g++生成可执行文件</p>
-<pre><code>g++ -o mysql_demo mysql_demo.o \
-    $(shell mysql_config --libs)
-</code></pre><p>此时的可执行文件是所有的库都是动态链接，我们的目的就是将其改为全静态链接</p>
-<h3 id="使用g-静态链接含有MySQL函数的代码"><a href="#使用g-静态链接含有MySQL函数的代码" class="headerlink" title="使用g++静态链接含有MySQL函数的代码"></a>使用g++静态链接含有MySQL函数的代码</h3><p>首先尝试直接在g++编译命令后面加上-􏰂􏰇stat􏰇ic，发现报大量错误，此处不一一截图。<br><a href="https://postimg.cc/Jy8zKk3q" target="_blank" rel="noopener"><img src="https://i.postimg.cc/wByRq57S/page1image12963488.png" alt="page1image12963488.png"></a><br>尝试安装缺失的库</p>
-<pre><code>yum install openssl-static
-yum install zlib-static
-</code></pre><p>安装完后再次编译，发现错误有一定程度的减少，但无法完全消除。一个难以解决的问题是ld程序不断提示缺少krb5库，查询后发现该库已经不再提供static库。<br>这种情况下，我做出了两种选择：</p>
-<h4 id="Choice-1-放弃全静态编译，只静态链接MySQL的部分"><a href="#Choice-1-放弃全静态编译，只静态链接MySQL的部分" class="headerlink" title="Choice 1  放弃全静态编译，只静态链接MySQL的部分"></a>Choice 1  放弃全静态编译，只静态链接MySQL的部分</h4><p>具体的方法是在g++命令中显式指定/usr/lib64中的libmysqlclient.a而不加-static选项进行编译。部分选项如下</p>
-<pre><code>g++ mysql_demo.o -o mysql_demo /usr/lib64/libmysqlclient.a
-</code></pre><p>此时可以生成可执行文件，且对该可执行文件使用ldd命令，发现其中已经不含与mysql有关的库。</p>
-<h4 id="Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件"><a href="#Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件" class="headerlink" title="Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件"></a>Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件</h4><p>朋友告诉我，想要全静态链接MySQL库，需要使用特定版本的libmysqlclient.a文件。因此在下列网址下载mysql-connector-c-devel-6.1.11-1.el6.x86_64.rpm文件<br><code>http://ftp.ntu.edu.tw/MySQL/Downloads/Connector-C/</code><br>解压得到mysql-connector-c-devel.cpio文件，查询资料后发现其依然是压缩文件，使用<code>cpis -idmv &lt; mysql-connector-c-devel.cpio</code>命令解压后得到usr文件夹<br><a href="https://postimg.cc/zbB5PSyn" target="_blank" rel="noopener"><img src="https://i.postimg.cc/gJyJjgdB/page3image13008112.png" alt="page3image13008112.png"></a><br>其中的<code>lib64/mysql</code>文件夹中含有libmysqlclient.a文件，将其发送到Linux目录下，设定链接路径后发现可以顺利使用<code>-static</code>选项进行编译。</p>
-<pre><code>g++ -c mysql_demo.cpp $(mysql_config --cflags)
-g++ -o mysql_demo mysql_demo.o ./libmysqlclient.a /usr/lib/gcc/x86_64-redhat-linux/4.8.2/libstdc++.a -lpthread -lssl -lcrypto -ldl $(LIB_Z) -static
-</code></pre><p>编译后用ldd命令查看可执行文件，提示不是动态可执行文件。</p>
-
-          
+          写在前面的一些废话什么是库？能吃吗？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。
+库的意义是什么？库是别人写
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/12/在CentOS-7-下静态链接MySQL库/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -658,75 +616,15 @@ g++ -o mysql_demo mysql_demo.o ./libmysqlclient.a /usr/lib/gcc/x86_64-redhat-lin
       
         
           
-            <h1 id="用Github-Pages和Hexo搭建个人博客"><a href="#用Github-Pages和Hexo搭建个人博客" class="headerlink" title="用Github Pages和Hexo搭建个人博客"></a>用Github Pages和Hexo搭建个人博客</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看了很多个人用户的博客，但感觉github.io这个域名后缀非常有感觉，于是十分好奇这个域名和GitHub有什么关系，了解后才知道这个叫做Github Pages的东西。于是用了一点时间参考前人的文章，把个人博客搭建在了GitHub上，在这里小小记录一下。</p>
-<h2 id="为什么要使用Github-Pages"><a href="#为什么要使用Github-Pages" class="headerlink" title="为什么要使用Github Pages"></a>为什么要使用Github Pages</h2><ul>
-<li>可以绑定你的域名(但暂时貌似只能绑定一个)。</li>
-<li>简单快捷，使用Github Pages可以为你提供一个免费的服务器，免去了自己搭建服务器和写数据库的麻烦。</li>
-</ul>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>在Mac OS上安装Node.js非常简单，在已经安装Homebrew的情况下，只需要一行代码<br><code>brew install node</code><br>即可完成。而在Windows上，则只需要到<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官网</a>下载安装文件并执行即可。<br>安装完成后，可以用<br><code>node -v</code> 和 <code>npm -v</code><br>查看自己的node.js和npm的版本。如果输入命令后可以显示版本号，则表示安装已经成功。</p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>Mac OS上安装Git也只需要使用Homebrew安装，命令与上面类似<br><code>brew install git</code></p>
-<h1 id="Hexo的安装和配置"><a href="#Hexo的安装和配置" class="headerlink" title="Hexo的安装和配置"></a>Hexo的安装和配置</h1><h2 id="一、安装Hexo"><a href="#一、安装Hexo" class="headerlink" title="一、安装Hexo"></a>一、安装Hexo</h2><p>在终端中键入以下命令</p>
-<pre><code>npm install hexo-cli -g
-
-npm install hexo-deployer-git --save
-</code></pre><p>第一句是安装hexo，第二句是安装hexo部署到git page的deployer，两者都需要安装。<br>如下图即安装完成。<br><a href="https://postimg.cc/LnvyZ9b0" target="_blank" rel="noopener"><img src="https://i.postimg.cc/BnfRktcs/2418-E85-A-1184-4963-9691-F0-D6-CB2-E1187.png" alt="2418-E85-A-1184-4963-9691-F0-D6-CB2-E1187.png"></a></p>
-<h2 id="二、Hexo初始化配置"><a href="#二、Hexo初始化配置" class="headerlink" title="二、Hexo初始化配置"></a>二、Hexo初始化配置</h2><h3 id="创建Hexo文件夹"><a href="#创建Hexo文件夹" class="headerlink" title="创建Hexo文件夹"></a>创建Hexo文件夹</h3><p>进行完上述步骤以后，Hexo就算顺利安装完成了。接下来就可以搭建自己的个人博客了。<br>可以根据自己的喜好新建目录，在终端下<code>cd</code>到该目录，执行以下操作。<br><code>hexo init</code><br><strong>上述命令的前提是该目录为空，如果不为空则会提示错误信息。</strong><br>命令执行完毕，Hexo将会在指定文件夹中新建所需要的文件。Hexo文件夹下的目录如下：</p>
-<p><a href="https://postimg.cc/LhJfVH5b" target="_blank" rel="noopener"><img src="https://i.postimg.cc/G3QQdtCd/3-C86-A291-BD89-4-D34-A4-C0-709-E5-FF72-E54.png" alt="3-C86-A291-BD89-4-D34-A4-C0-709-E5-FF72-E54.png"></a></p>
-<h3 id="本地查看效果"><a href="#本地查看效果" class="headerlink" title="本地查看效果"></a>本地查看效果</h3><p>执行下面语句，执行完即可登录localhost:4000查看效果</p>
-<pre><code>hexo generate
-hexo server
-</code></pre><p>登录localhost:4000，即可看到本地的效果如下： </p>
-<p><a href="https://postimg.cc/zVBJhBfy" target="_blank" rel="noopener"><img src="https://i.postimg.cc/28d3PLR7/1716-CE56-EA44-4-D6-D-BBB5-477-C9001-A589.png" alt="1716-CE56-EA44-4-D6-D-BBB5-477-C9001-A589.png"></a></p>
-<p>以后，如果想在本地查看博客的效果，只需要输入下列命令</p>
-<pre><code>hexo clean
-hexo g -s
-hexo server
-</code></pre><p>再前往访问localhost:4000即可完成。其中第一条命令是为了清除hexo目录中的缓存信息，防止出现某些错误。</p>
-<h1 id="将博客部署到Github-Pages上"><a href="#将博客部署到Github-Pages上" class="headerlink" title="将博客部署到Github Pages上"></a>将博客部署到Github Pages上</h1><p>那么现在本地的博客已经搭建起来了，但是我们只可以通过本地连接查看我们的博客。那么我们现在需要做的就是把本地的博客发布到服务器上，让别人也可以连接我们的博客，而Github Pages就帮我完成了这件事情。但是Github Pages的代码就是寄存在Github上面的。那么接下来我们需要在Github上面创建一个新的项目。</p>
-<h2 id="一、登录Github账户"><a href="#一、登录Github账户" class="headerlink" title="一、登录Github账户"></a>一、登录Github账户</h2><p>不用多说，访问<a href="github.com">Github首页</a>，登录或者注册自己的账户。<br>目前，国内用户应该可以正常访问Github。</p>
-<h2 id="二、创建项目代码库"><a href="#二、创建项目代码库" class="headerlink" title="二、创建项目代码库"></a>二、创建项目代码库</h2><p>1.注册完登录后，创建一个我们自己的Github Pages项目。点击<a href="https://github.com/new" target="_blank" rel="noopener">New repository</a>。<br>2.创建新的repository时，要注意repository的名称必须是username.github.io，比如此处我的用户名是Zealoft，那么名称就必须是Zealoft.github.io。<br><a href="https://postimg.cc/bsshJB6b" target="_blank" rel="noopener"><img src="https://i.postimg.cc/wTkTWKLW/51-BEAA50-44-B5-4-A29-87-E8-52-EFDC0-DAE11.png" alt="51-BEAA50-44-B5-4-A29-87-E8-52-EFDC0-DAE11.png"></a></p>
-<h2 id="三、配置SSH密钥"><a href="#三、配置SSH密钥" class="headerlink" title="三、配置SSH密钥"></a>三、配置SSH密钥</h2><p>配置Github的SSH密钥可以让本地git项目与远程的github建立联系，让我们在本地写了代码之后直接通过git操作就可以实现本地代码库与Github代码库同步。操作如下：</p>
-<h3 id="第一步-看看是否存在SSH密钥-keys"><a href="#第一步-看看是否存在SSH密钥-keys" class="headerlink" title="第一步 看看是否存在SSH密钥(keys)"></a>第一步 看看是否存在SSH密钥(keys)</h3><p>首先，我们需要看看是否看看本机是否存在SSH keys,打开Git Bash,并运行:<br><code>$ cd ~/. ssh</code><br>在Mac OS下，命令改为<br><code>cd /Users/your_username/.ssh</code><br>检查你本机用户home目录下是否存在.ssh目录</p>
-<p>如果，不存在此目录，则进行第二步操作，否则，你本机已经存在ssh公钥和私钥，可以略过第二步，直接进入第三步操作。</p>
-<h3 id="第二步-创建一对新的SSH密钥"><a href="#第二步-创建一对新的SSH密钥" class="headerlink" title="第二步 创建一对新的SSH密钥"></a>第二步 创建一对新的SSH密钥</h3><pre><code>$ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
-#这将按照你提供的邮箱地址，创建一对密钥
-Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]
-</code></pre><p>直接回车，则将密钥按默认文件进行存储。此时也可以输入特定的文件名，比如/c/Users/you/.ssh/github_rsa</p>
-<p>接着，根据提示，你需要输入密码和确认密码（说到这里，如果你很放心，其实可以不用密码，就是到输密码的地方，都直接回车，所以每次push就只管回车就行了。所谓的最安全的密码，就是没有密码 哈哈）。相关提示如下：</p>
-<pre><code>Enter passphrase (empty for no passphrase): [Type a passphrase]
-Enter same passphrase again: [Type passphrase again]
-</code></pre><p>输入完成之后，屏幕会显示如下信息：</p>
-<pre><code>Your identification has been saved in /c/Users/you/.ssh/id_rsa.
-Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.
-The key fingerprint is:
-01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
-</code></pre><h3 id="第三步-在Github账户中添加你的公钥"><a href="#第三步-在Github账户中添加你的公钥" class="headerlink" title="第三步 在Github账户中添加你的公钥"></a>第三步 在Github账户中添加你的公钥</h3><p>运行如下命令，查看你的公钥内容<br><code>cat /Users/your_username/.ssh/id_rsa.pub</code><br>将其全部选中复制<br>接着：<br>1.登录Github，进入你的Account Settings。<br>2.选择SSH Keys<br>3.粘贴密钥，添加即可。</p>
-<h3 id="第四步-测试"><a href="#第四步-测试" class="headerlink" title="第四步 测试"></a>第四步 测试</h3><p><strong>可以输入下面的命令，看看设置是否成功，<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>的部分不要修改：</strong><br><code>$ ssh -T git@github.com</code><br>如果是下面的反馈：</p>
-<pre><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.
-RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-Are you sure you want to continue connecting (yes/no)?
-</code></pre><p>输入yes就好。<br>然后看到：</p>
-<pre><code>Hi Zealoft! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><p>就说明已经顺利连接Github了。</p>
-<h3 id="第五步-设置用户信息"><a href="#第五步-设置用户信息" class="headerlink" title="第五步 设置用户信息"></a>第五步 设置用户信息</h3><p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。 Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字根据自己的喜好自己取，而不是GitHub的昵称。</p>
-<pre><code>$ git config --global user.name &quot;ryanlijianchang&quot;//用户名
-$ git config --global user.email  &quot;liji.anchang@163.com&quot;//填写自己的邮箱
-</code></pre><h3 id="第六步-SSH-Key配置成功"><a href="#第六步-SSH-Key配置成功" class="headerlink" title="第六步 SSH Key配置成功"></a>第六步 SSH Key配置成功</h3><p>本机已成功连接到Github。</p>
-<h2 id="四、将本地的Hexo文件更新到Github的库中"><a href="#四、将本地的Hexo文件更新到Github的库中" class="headerlink" title="四、将本地的Hexo文件更新到Github的库中"></a>四、将本地的Hexo文件更新到Github的库中</h2><h3 id="第一步-登录Github打开自己的项目username-github-io"><a href="#第一步-登录Github打开自己的项目username-github-io" class="headerlink" title="第一步 登录Github打开自己的项目username.github.io"></a>第一步 登录Github打开自己的项目username.github.io</h3><h3 id="第二步-打开之后，点击SSH，选择SSH类型地址"><a href="#第二步-打开之后，点击SSH，选择SSH类型地址" class="headerlink" title="第二步 打开之后，点击SSH，选择SSH类型地址"></a>第二步 打开之后，点击SSH，选择SSH类型地址</h3><p><a href="https://postimg.cc/BXddvQP9" target="_blank" rel="noopener"><img src="https://i.postimg.cc/FHRmDY9R/DD133-F7-D-52-A2-4-BB4-A14-A-DF953-A877-E11.png" alt="DD133-F7-D-52-A2-4-BB4-A14-A-DF953-A877-E11.png"></a></p>
-<h3 id="第三步-复制地址"><a href="#第三步-复制地址" class="headerlink" title="第三步 复制地址"></a>第三步 复制地址</h3><p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;6F3FCF2F-1913-4124-8EBB-C1B4A5A81C6D.png" alt=""></p>
-<h3 id="第四步-打开开始时创建的Hexo文件夹，（如F-Blog-Hexo），用记事本或Sublime-Text打开刚文件夹下的-config-yml文件"><a href="#第四步-打开开始时创建的Hexo文件夹，（如F-Blog-Hexo），用记事本或Sublime-Text打开刚文件夹下的-config-yml文件" class="headerlink" title="第四步 打开开始时创建的Hexo文件夹，（如F:\Blog\Hexo），用记事本或Sublime Text打开刚文件夹下的_config.yml文件"></a>第四步 打开开始时创建的Hexo文件夹，（如F:\Blog\Hexo），用记事本或Sublime Text打开刚文件夹下的_config.yml文件</h3><h3 id="第五步-在配置文件里作如下修改，保存"><a href="#第五步-在配置文件里作如下修改，保存" class="headerlink" title="第五步 在配置文件里作如下修改，保存"></a>第五步 在配置文件里作如下修改，保存</h3><p><img src="&amp;&amp;&amp;SFLOCALFILEPATH&amp;&amp;&amp;8B513DFC-2169-4029-A2E1-8566DC8E3BCC.png" alt=""></p>
-<h3 id="第六步-在Hexo文件夹下执行："><a href="#第六步-在Hexo文件夹下执行：" class="headerlink" title="第六步 在Hexo文件夹下执行："></a>第六步 在Hexo文件夹下执行：</h3><pre><code>hexo g
-hexo d
-</code></pre><p>或者直接执行：</p>
-<pre><code>hexo g -d
-</code></pre><p>执行完之后会让你输入github的账号和密码，输入完后就可以登录我们自己的部署在Github Pages服务器上的博客了。对应的地址是 username.github.io(我的是：zealoft.github.io)。</p>
-<p>假如这时候，报错 ERROR Deployer not found: git，那么就是你的deployer没有安装成功，你需要执行如下命令再安装一次：</p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre><p>这样，再次执行hexo g -d，你的博客就部署到Github上了。</p>
-<h3 id="第七步-在浏览器上输入自己的主页地址"><a href="#第七步-在浏览器上输入自己的主页地址" class="headerlink" title="第七步 在浏览器上输入自己的主页地址"></a>第七步 在浏览器上输入自己的主页地址</h3><p>这个时候，每个人都能通过这个地址访问博客了。</p>
-
-          
+          用Github Pages和Hexo搭建个人博客前言看了很多个人用户的博客，但感觉github.io这个域名后缀非常有感觉，于是十分好奇这个域名和GitHub有什么关系，了解后才知道这个叫做Github Pages的东西。于是用了一点时间参考前人的文章，把个人博客搭建在了GitHub上，在这里小小记
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/12/用Github-Pages和Hexo搭建个人博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -882,13 +780,17 @@ hexo d
       
         
           
-            <p>2018年，大三，21岁。</p>
-<p>总有人说身在大学，老师们上课教的东西是远远不够的，学会自学才是作为大学生，乃至程序员最重要的品质。我也在努力尝试这样去做，但回想大一大二两年时间里，我好像并没有真正地全身心投入到一样东西里，把它学深学透。</p>
-<p>现在大三，我开始深深感受到自己肩上的压力和责任，意识到自己现在的简历上几乎没有可写的东西、人生还有些迷茫、功课负担也格外重，有太多等着我去处理的事情。但压力和ddl会不断给人动力，我也觉得自己需要活得更加成熟一些。</p>
-<p>其实自己在一年多以前也尝试搭建过博客网站、买过域名、写过CSDN博客，但那个时候能写的东西也不过是Java/C++的一些语言特性，能值得写的东西也着实不多，最终不了了之。但如今大三开学一个月，我突然感觉自己似乎有很多可以表达、可以记录的东西，我计划在这一年参加Kaggle的数据科学比赛，还正在学习模式识别的课程，因此机器学习、数据处理都会是我学习的内容；出于当前的课程要求，我正在着手搭建Linux CentOS的一系列环境准备进行网络开发；这半年内我还要开始开发编译器、进行粒子效果的渲染，我想了想，这正是我开始写博客的最好时机。</p>
-<p>Anyway，坚持二字胜过千金，希望这个博客能一直更新下去，记录我在技术上、学习上的点点滴滴。</p>
-
-          
+          2018年，大三，21岁。
+总有人说身在大学，老师们上课教的东西是远远不够的，学会自学才是作为大学生，乃至程序员最重要的品质。我也在努力尝试这样去做，但回想大一大二两年时间里，我好像并没有真正地全身心投入到一样东西里，把它学深学透。
+现在大三，我开始深深感受到自己肩上的压力和责任，意识到自己现在的简
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/12/我为什么要开始写博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1022,21 +924,15 @@ hexo d
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/12/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
