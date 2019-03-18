@@ -115,7 +115,7 @@
   <meta name="description" content="我为什么要开始写博客2018年，大三，21岁。 总有人说身在大学，老师们上课教的东西是远远不够的，学会自学才是作为大学生，乃至程序员最重要的品质。我也在努力尝试这样去做，但回想大一大二两年时间里，我好像并没有真正地全身心投入到一样东西里，把它学深学透。 现在大三，我开始深深感受到自己肩上的压力和责任，意识到自己现在的简历上几乎没有可写的东西、人生还有些迷茫、功课负担也格外重，有太多等着我去处理的事">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我为什么要开始写博客">
-<meta property="og:url" content="http://yoursite.com/posts/1e30.html">
+<meta property="og:url" content="http://yoursite.com/posts/1e30">
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
 <meta property="og:description" content="我为什么要开始写博客2018年，大三，21岁。 总有人说身在大学，老师们上课教的东西是远远不够的，学会自学才是作为大学生，乃至程序员最重要的品质。我也在努力尝试这样去做，但回想大一大二两年时间里，我好像并没有真正地全身心投入到一样东西里，把它学深学透。 现在大三，我开始深深感受到自己肩上的压力和责任，意识到自己现在的简历上几乎没有可写的东西、人生还有些迷茫、功课负担也格外重，有太多等着我去处理的事">
 <meta property="og:locale" content="zh-CN">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/1e30.html"/>
+  <link rel="canonical" href="http://yoursite.com/posts/1e30"/>
 
 
 
@@ -343,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/1e30.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/1e30">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zealoft">
@@ -433,7 +433,7 @@
 
           
           
-             <span id="/posts/1e30.html" class="leancloud_visitors" data-flag-title="我为什么要开始写博客">
+             <span id="/posts/1e30" class="leancloud_visitors" data-flag-title="我为什么要开始写博客">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -551,7 +551,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/e26.html" rel="prev" title="用Github Pages和Hexo搭建个人博客">
+              <a href="/posts/e26" rel="prev" title="用Github Pages和Hexo搭建个人博客">
                 用Github Pages和Hexo搭建个人博客 <i class="fa fa-chevron-right"></i>
               </a>
             

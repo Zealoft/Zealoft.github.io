@@ -112,25 +112,24 @@
 
 
 
-  <meta name="description" content="前言​    由于最近实验室需要在Windows 10上配置Carla环境，而Carla在Windows下面的配置编译过程一直存在比较大的问题。最近用了一些精力尝试解决这一问题，最终虽然没有100%完美地解决问题（官方给出的搭建方法依然暂时无效，等待后续跟进），但已经可以完整地运行各类功能库，因此在这里记录一下我的解决方案。 详细步骤Step 1：下载相关资源​    配置好相关的依赖，将Git/">
-<meta name="keywords" content="Windows,无人驾驶,Carla">
+  <meta name="description" content="Everything in technology world and me.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Windows下配置编译Carla环境">
-<meta property="og:url" content="http://yoursite.com/posts/c954.html">
+<meta property="og:title" content="Windows WPF编程(1) XAML的基本使用">
+<meta property="og:url" content="http://yoursite.com/posts/f176">
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
-<meta property="og:description" content="前言​    由于最近实验室需要在Windows 10上配置Carla环境，而Carla在Windows下面的配置编译过程一直存在比较大的问题。最近用了一些精力尝试解决这一问题，最终虽然没有100%完美地解决问题（官方给出的搭建方法依然暂时无效，等待后续跟进），但已经可以完整地运行各类功能库，因此在这里记录一下我的解决方案。 详细步骤Step 1：下载相关资源​    配置好相关的依赖，将Git/">
+<meta property="og:description" content="Everything in technology world and me.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-18T04:31:47.506Z">
+<meta property="og:updated_time" content="2019-03-18T04:31:47.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Windows下配置编译Carla环境">
-<meta name="twitter:description" content="前言​    由于最近实验室需要在Windows 10上配置Carla环境，而Carla在Windows下面的配置编译过程一直存在比较大的问题。最近用了一些精力尝试解决这一问题，最终虽然没有100%完美地解决问题（官方给出的搭建方法依然暂时无效，等待后续跟进），但已经可以完整地运行各类功能库，因此在这里记录一下我的解决方案。 详细步骤Step 1：下载相关资源​    配置好相关的依赖，将Git/">
+<meta name="twitter:title" content="Windows WPF编程(1) XAML的基本使用">
+<meta name="twitter:description" content="Everything in technology world and me.">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/c954.html"/>
+  <link rel="canonical" href="http://yoursite.com/posts/f176"/>
 
 
 
@@ -140,7 +139,7 @@
   };
 </script>
 
-  <title>在Windows下配置编译Carla环境 | Zealoft's Blog</title>
+  <title>Windows WPF编程(1) XAML的基本使用 | Zealoft's Blog</title>
   
 
 
@@ -344,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/c954.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/f176">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zealoft">
@@ -361,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在Windows下配置编译Carla环境
+          <h1 class="post-title" itemprop="name headline">Windows WPF编程(1) XAML的基本使用
               
             
           </h1>
@@ -386,7 +385,7 @@
                 
               
 
-              <time title="创建时间：2019-03-08 23:27:33" itemprop="dateCreated datePublished" datetime="2019-03-08T23:27:33+08:00">2019-03-08</time>
+              <time title="创建时间：2019-03-12 23:32:23" itemprop="dateCreated datePublished" datetime="2019-03-12T23:32:23+08:00">2019-03-12</time>
             
 
             
@@ -409,24 +408,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Carla/" itemprop="url" rel="index"><span itemprop="name">Carla</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -434,7 +415,7 @@
 
           
           
-             <span id="/posts/c954.html" class="leancloud_visitors" data-flag-title="在Windows下配置编译Carla环境">
+             <span id="/posts/f176" class="leancloud_visitors" data-flag-title="Windows WPF编程(1) XAML的基本使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -465,28 +446,7 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    由于最近实验室需要在Windows 10上配置Carla环境，而Carla在Windows下面的配置编译过程一直存在比较大的问题。最近用了一些精力尝试解决这一问题，最终虽然没有100%完美地解决问题（官方给出的搭建方法依然暂时无效，等待后续跟进），但已经可以完整地运行各类功能库，因此在这里记录一下我的解决方案。</p>
-<h2 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h2><h3 id="Step-1：下载相关资源"><a href="#Step-1：下载相关资源" class="headerlink" title="Step 1：下载相关资源"></a>Step 1：下载相关资源</h3><p>​    配置好相关的依赖，将Git/Make/CMake/Python3/VS相关环境安装完成后（详见<a href="https://carla.readthedocs.io/en/latest/how_to_build_on_windows/" target="_blank" rel="noopener">How to build on Windows</a>），安装Unreal Engine 4.21，之后打开一个“适用于VS 2017的 x64 本机工具命令提示”程序（<strong>注意</strong>，此处不能使用Windows的powershell或者cmd，否则会在make时出现问题），将carla的repository克隆到本地。</p>
-<pre><code class="powershell">git clone https://github.com/carla-simulator/carla.git
-</code></pre>
-<p>​    随后，需要下载内容包，下载网址在\Util\ContentVersions.txt中。下载完成后将其解压到Unreal\CarlaUE4\Content\Carla中（需要创建新目录）。</p>
-<p>​    另外，由于Windows上依然存在make PythonAPI出错的问题，因此需要额外下载官方给出的编译完成的打包，下载地址为<a href="https://github.com/carla-simulator/carla/releases/tag/0.9.4。下载完成后可以把它解压到任意一个文件夹中，等待后续过程使用。" target="_blank" rel="noopener">https://github.com/carla-simulator/carla/releases/tag/0.9.4。下载完成后可以把它解压到任意一个文件夹中，等待后续过程使用。</a></p>
-<p>​    需要注意的是，上述的两个需要下载的内容都是存放在Google Drive中的文件，因此需要科学上网进行下载。</p>
-<h3 id="Step-2：构建Carla组件"><a href="#Step-2：构建Carla组件" class="headerlink" title="Step 2：构建Carla组件"></a>Step 2：构建Carla组件</h3><p>​    完成上述的下载步骤后，就可以开始进行Carla的build。进入新创建的目录，并开始进行构建操作：</p>
-<pre><code class="shell">cd carla
-make launch
-</code></pre>
-<p>​    上述的make launch需要花费较长的时间，make程序还会自动下载zlib等Windows上编译的依赖组件（新版本才会自动下载，在比较旧的版本如0.9.2以前，需要手动编译依赖库）。如果步骤1中的环境都已经配置完成，并且已经正确安装了对应版本的Unreal Engine，此处应该能顺利编译，并打开一个Unreal Engine Editor窗口。</p>
-<p>​    在新打开的Editor窗口中，我们可以点击右上角的播放按钮来新生成一个Carla运行实例。需要注意的是，在后续的Server-Client连接中程序默认指定的端口号为2000，因此需要用播放按钮旁边的设置按钮来配置端口号。</p>
-<p>​    一切顺利后，我们就可以按照官方文档中给出的来尝试运行PythonAPI目录下的几个py文件。但不出意外，运行后报错：No module named carla。可以想到是Python库尚未编译完成。因此我们还需要进行PythonAPI的配置。</p>
-<h3 id="Step-3：构建Python库"><a href="#Step-3：构建Python库" class="headerlink" title="Step 3：构建Python库"></a>Step 3：构建Python库</h3><p>​    首先尝试借助官方的Makefile中的方法尝试进行构建：</p>
-<pre><code class="shell">    make PythonAPI
-</code></pre>
-<p>​    经过一段时间的构建后，出现了链接错误的Error。虽然最后一行的提示是successfully built，但是实际上并没有生成任何文件。经过一段时间的查找无果后，最终决定借助官方已经编译好的压缩文件，就是上述我们单独下载的第二个文件。</p>
-<p>​    我们将压缩文件解压，并且将所有文件（不含目录）复制到carla的根目录下，并且将PythonAPI目录下的.egg文件复制到carla的PythonAPI中。</p>
-<p>​    此时，由于我们已经将压缩文件中含有的大量python文件放到Carla的根目录，因此直接运行这些文件即可。我们随便挑一个manual_control.py尝试运行，发现再次报错。不过仔细一看，发现不再是no module named carla的错误，而是提示缺少.dll文件！这算是一个不小的进步，查阅相关issue后得知，我们只需把Build\zlib-install\bin中的zlib.dll放到根目录，再次尝试运行，boom！我们终于可以成功地运行含有carla库的python代码了！</p>
-<h2 id="一些不足的地方"><a href="#一些不足的地方" class="headerlink" title="一些不足的地方"></a>一些不足的地方</h2><p>​    本文章所述的方法还是存在一些缺陷。主要是含有carla库的python代码只能在carla根目录运行，一旦放到其他位置依然会提示没有对应的模块的问题。Windows上面编译模块的确会出现很多麻烦，这大概也是Linux受开发者欢迎的原因。</p>
-
+        
       
     </div>
 
@@ -533,16 +493,6 @@ make launch
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
-          
-            <a href="/tags/无人驾驶/" rel="tag"># 无人驾驶</a>
-          
-            <a href="/tags/Carla/" rel="tag"># Carla</a>
-          
-        </div>
-      
 
       
       
@@ -572,8 +522,8 @@ make launch
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/9a46.html" rel="next" title="在CentOS 7 下静态链接MySQL库">
-                <i class="fa fa-chevron-left"></i> 在CentOS 7 下静态链接MySQL库
+              <a href="/posts/c954" rel="next" title="在Windows下配置编译Carla环境">
+                <i class="fa fa-chevron-left"></i> 在Windows下配置编译Carla环境
               </a>
             
           </div>
@@ -582,8 +532,8 @@ make launch
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/f176.html" rel="prev" title="Windows WPF编程(1) XAML的基本使用">
-                Windows WPF编程(1) XAML的基本使用 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/124a" rel="prev" title="Linux常用命令的整理">
+                Linux常用命令的整理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -634,17 +584,8 @@ make launch
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -759,22 +700,6 @@ make launch
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细步骤"><span class="nav-number">2.</span> <span class="nav-text">详细步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1：下载相关资源"><span class="nav-number">2.1.</span> <span class="nav-text">Step 1：下载相关资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2：构建Carla组件"><span class="nav-number">2.2.</span> <span class="nav-text">Step 2：构建Carla组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3：构建Python库"><span class="nav-number">2.3.</span> <span class="nav-text">Step 3：构建Python库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些不足的地方"><span class="nav-number">3.</span> <span class="nav-text">一些不足的地方</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

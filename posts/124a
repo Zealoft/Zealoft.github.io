@@ -116,7 +116,7 @@
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux常用命令的整理">
-<meta property="og:url" content="http://yoursite.com/posts/124a.html">
+<meta property="og:url" content="http://yoursite.com/posts/124a">
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
 <meta property="og:description" content="前言​    这篇blog主要是写给正在苦学Linux的titi同学，帮助她整理一下平时可能会用到的一些Linux命令，也作为我们两个使用过程中查阅使用。 有哪些基本命令？关于目录/文件的各种命令cd命令​    首先，用cd命令从当前路径前往指定的目录。 cd [DirectoryName]   # 前往指定的目录 ​    有几种特殊的用法： cd ~                 # 前往">
 <meta property="og:locale" content="zh-CN">
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/124a.html"/>
+  <link rel="canonical" href="http://yoursite.com/posts/124a"/>
 
 
 
@@ -344,7 +344,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/124a.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/124a">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zealoft">
@@ -434,7 +434,7 @@
 
           
           
-             <span id="/posts/124a.html" class="leancloud_visitors" data-flag-title="Linux常用命令的整理">
+             <span id="/posts/124a" class="leancloud_visitors" data-flag-title="Linux常用命令的整理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -586,7 +586,7 @@ kill -9 [pid]
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/f176.html" rel="next" title="Windows WPF编程(1) XAML的基本使用">
+              <a href="/posts/f176" rel="next" title="Windows WPF编程(1) XAML的基本使用">
                 <i class="fa fa-chevron-left"></i> Windows WPF编程(1) XAML的基本使用
               </a>
             

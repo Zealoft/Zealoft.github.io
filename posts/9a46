@@ -116,7 +116,7 @@
 <meta name="keywords" content="Linux,MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在CentOS 7 下静态链接MySQL库">
-<meta property="og:url" content="http://yoursite.com/posts/9a46.html">
+<meta property="og:url" content="http://yoursite.com/posts/9a46">
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
 <meta property="og:description" content="在CentOS 7 下静态链接MySQL库写在前面的一些话什么是库？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。">
 <meta property="og:locale" content="zh-CN">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/9a46.html"/>
+  <link rel="canonical" href="http://yoursite.com/posts/9a46"/>
 
 
 
@@ -348,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/9a46.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/9a46">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zealoft">
@@ -438,7 +438,7 @@
 
           
           
-             <span id="/posts/9a46.html" class="leancloud_visitors" data-flag-title="在CentOS 7 下静态链接MySQL库">
+             <span id="/posts/9a46" class="leancloud_visitors" data-flag-title="在CentOS 7 下静态链接MySQL库">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -603,7 +603,7 @@ g++ -o mysql_demo mysql_demo.o ./libmysqlclient.a /usr/lib/gcc/x86_64-redhat-lin
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/e26.html" rel="next" title="用Github Pages和Hexo搭建个人博客">
+              <a href="/posts/e26" rel="next" title="用Github Pages和Hexo搭建个人博客">
                 <i class="fa fa-chevron-left"></i> 用Github Pages和Hexo搭建个人博客
               </a>
             
@@ -613,7 +613,7 @@ g++ -o mysql_demo mysql_demo.o ./libmysqlclient.a /usr/lib/gcc/x86_64-redhat-lin
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/c954.html" rel="prev" title="在Windows下配置编译Carla环境">
+              <a href="/posts/c954" rel="prev" title="在Windows下配置编译Carla环境">
                 在Windows下配置编译Carla环境 <i class="fa fa-chevron-right"></i>
               </a>
             

@@ -116,7 +116,7 @@
 <meta name="keywords" content="Github Pages">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用Github Pages和Hexo搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/posts/e26.html">
+<meta property="og:url" content="http://yoursite.com/posts/e26">
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
 <meta property="og:description" content="用Github Pages和Hexo搭建个人博客前言看了很多个人用户的博客，但感觉github.io这个域名后缀非常有感觉，于是十分好奇这个域名和GitHub有什么关系，了解后才知道这个叫做Github Pages的东西。于是用了一点时间参考前人的文章，把个人博客搭建在了GitHub上，在这里小小记录一下。 为什么要使用Github Pages 可以绑定你的域名(但暂时貌似只能绑定一个)。 简单快">
 <meta property="og:locale" content="zh-CN">
@@ -138,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/e26.html"/>
+  <link rel="canonical" href="http://yoursite.com/posts/e26"/>
 
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/e26.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/e26">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zealoft">
@@ -442,7 +442,7 @@
 
           
           
-             <span id="/posts/e26.html" class="leancloud_visitors" data-flag-title="用Github Pages和Hexo搭建个人博客">
+             <span id="/posts/e26" class="leancloud_visitors" data-flag-title="用Github Pages和Hexo搭建个人博客">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -622,7 +622,7 @@ hexo d
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/1e30.html" rel="next" title="我为什么要开始写博客">
+              <a href="/posts/1e30" rel="next" title="我为什么要开始写博客">
                 <i class="fa fa-chevron-left"></i> 我为什么要开始写博客
               </a>
             
@@ -632,7 +632,7 @@ hexo d
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/9a46.html" rel="prev" title="在CentOS 7 下静态链接MySQL库">
+              <a href="/posts/9a46" rel="prev" title="在CentOS 7 下静态链接MySQL库">
                 在CentOS 7 下静态链接MySQL库 <i class="fa fa-chevron-right"></i>
               </a>
             
