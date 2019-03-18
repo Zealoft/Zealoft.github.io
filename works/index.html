@@ -708,8 +708,11 @@
 
 
 
+
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
    <script type="text/javascript">
         var gitalk = new Gitalk({
           clientID: 'b9ba6f5d269d4335ede7',
@@ -718,8 +721,13 @@
           owner: 'Zealoft',
           admin: ['Zealoft'],
           id: location.pathname,
-          distractionFreeMode: 'true'
+          labels: 'gitalk',
+          perPage: 15,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
         })
+
         gitalk.render('gitalk-container')           
        </script>
 
