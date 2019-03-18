@@ -112,24 +112,29 @@
 
 
 
-  <meta name="description" content="我为什么要开始写博客2018年，大三，21岁。 总有人说身在大学，老师们上课教的东西是远远不够的，学会自学才是作为大学生，乃至程序员最重要的品质。我也在努力尝试这样去做，但回想大一大二两年时间里，我好像并没有真正地全身心投入到一样东西里，把它学深学透。 现在大三，我开始深深感受到自己肩上的压力和责任，意识到自己现在的简历上几乎没有可写的东西、人生还有些迷茫、功课负担也格外重，有太多等着我去处理的事">
+  <meta name="description" content="在CentOS 7 下静态链接MySQL库写在前面的一些话什么是库？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。">
+<meta name="keywords" content="Linux,MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我为什么要开始写博客">
-<meta property="og:url" content="http://yoursite.com/posts/undefined.html">
+<meta property="og:title" content="在CentOS 7 下静态链接MySQL库">
+<meta property="og:url" content="http://yoursite.com/2018/10/12/在CentOS-7-下静态链接MySQL库/index.html">
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
-<meta property="og:description" content="我为什么要开始写博客2018年，大三，21岁。 总有人说身在大学，老师们上课教的东西是远远不够的，学会自学才是作为大学生，乃至程序员最重要的品质。我也在努力尝试这样去做，但回想大一大二两年时间里，我好像并没有真正地全身心投入到一样东西里，把它学深学透。 现在大三，我开始深深感受到自己肩上的压力和责任，意识到自己现在的简历上几乎没有可写的东西、人生还有些迷茫、功课负担也格外重，有太多等着我去处理的事">
+<meta property="og:description" content="在CentOS 7 下静态链接MySQL库写在前面的一些话什么是库？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-14T02:54:24.000Z">
+<meta property="og:image" content="https://i.postimg.cc/HsFX93Px/page3image12980288.png">
+<meta property="og:image" content="https://i.postimg.cc/wByRq57S/page1image12963488.png">
+<meta property="og:image" content="https://i.postimg.cc/gJyJjgdB/page3image13008112.png">
+<meta property="og:updated_time" content="2018-10-14T02:54:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我为什么要开始写博客">
-<meta name="twitter:description" content="我为什么要开始写博客2018年，大三，21岁。 总有人说身在大学，老师们上课教的东西是远远不够的，学会自学才是作为大学生，乃至程序员最重要的品质。我也在努力尝试这样去做，但回想大一大二两年时间里，我好像并没有真正地全身心投入到一样东西里，把它学深学透。 现在大三，我开始深深感受到自己肩上的压力和责任，意识到自己现在的简历上几乎没有可写的东西、人生还有些迷茫、功课负担也格外重，有太多等着我去处理的事">
+<meta name="twitter:title" content="在CentOS 7 下静态链接MySQL库">
+<meta name="twitter:description" content="在CentOS 7 下静态链接MySQL库写在前面的一些话什么是库？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。">
+<meta name="twitter:image" content="https://i.postimg.cc/HsFX93Px/page3image12980288.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/undefined.html"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/12/在CentOS-7-下静态链接MySQL库/"/>
 
 
 
@@ -139,7 +144,7 @@
   };
 </script>
 
-  <title>我为什么要开始写博客 | Zealoft's Blog</title>
+  <title>在CentOS 7 下静态链接MySQL库 | Zealoft's Blog</title>
   
 
 
@@ -343,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/undefined.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/12/在CentOS-7-下静态链接MySQL库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zealoft">
@@ -360,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我为什么要开始写博客
+          <h1 class="post-title" itemprop="name headline">在CentOS 7 下静态链接MySQL库
               
             
           </h1>
@@ -385,7 +390,7 @@
                 
               
 
-              <time title="创建时间：2018-10-12 13:25:03" itemprop="dateCreated datePublished" datetime="2018-10-12T13:25:03+08:00">2018-10-12</time>
+              <time title="创建时间：2018-10-12 18:32:49" itemprop="dateCreated datePublished" datetime="2018-10-12T18:32:49+08:00">2018-10-12</time>
             
 
             
@@ -402,7 +407,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-14 10:54:24" itemprop="dateModified" datetime="2018-10-14T10:54:24+08:00">2018-10-14</time>
+                <time title="修改时间：2018-10-14 10:54:33" itemprop="dateModified" datetime="2018-10-14T10:54:33+08:00">2018-10-14</time>
               
             
           </span>
@@ -419,7 +424,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -433,7 +438,7 @@
 
           
           
-             <span id="/posts/undefined.html" class="leancloud_visitors" data-flag-title="我为什么要开始写博客">
+             <span id="/2018/10/12/在CentOS-7-下静态链接MySQL库/" class="leancloud_visitors" data-flag-title="在CentOS 7 下静态链接MySQL库">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -464,11 +469,56 @@
       
 
       
-        <h1 id="我为什么要开始写博客"><a href="#我为什么要开始写博客" class="headerlink" title="我为什么要开始写博客"></a>我为什么要开始写博客</h1><p>2018年，大三，21岁。</p>
-<p>总有人说身在大学，老师们上课教的东西是远远不够的，学会自学才是作为大学生，乃至程序员最重要的品质。我也在努力尝试这样去做，但回想大一大二两年时间里，我好像并没有真正地全身心投入到一样东西里，把它学深学透。</p>
-<p>现在大三，我开始深深感受到自己肩上的压力和责任，意识到自己现在的简历上几乎没有可写的东西、人生还有些迷茫、功课负担也格外重，有太多等着我去处理的事情。但压力和ddl会不断给人动力，我也觉得自己需要活得更加成熟一些。</p>
-<p>其实自己在一年多以前也尝试搭建过博客网站、买过域名、写过CSDN博客，但那个时候能写的东西也不过是Java/C++的一些语言特性，能值得写的东西也着实不多，最终不了了之。但如今大三开学一个月，我突然感觉自己似乎有很多可以表达、可以记录的东西，我计划在这一年参加Kaggle的数据科学比赛，还正在学习模式识别的课程，因此机器学习、数据处理都会是我学习的内容；出于当前的课程要求，我正在着手搭建Linux CentOS的一系列环境准备进行网络开发；这半年内我还要开始开发编译器、进行粒子效果的渲染，我想了想，这正是我开始写博客的最好时机。</p>
-<p>Anyway，坚持二字胜过千金，希望这个博客能一直更新下去，记录我在技术上、学习上的点点滴滴。</p>
+        <h1 id="在CentOS-7-下静态链接MySQL库"><a href="#在CentOS-7-下静态链接MySQL库" class="headerlink" title="在CentOS 7 下静态链接MySQL库"></a>在CentOS 7 下静态链接MySQL库</h1><h1 id="写在前面的一些话"><a href="#写在前面的一些话" class="headerlink" title="写在前面的一些话"></a>写在前面的一些话</h1><h2 id="什么是库？"><a href="#什么是库？" class="headerlink" title="什么是库？"></a>什么是库？</h2><p>事实上，在windows平台和linux平台下都大量存在着库。<br>本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。<br>由于windows和linux的本质不同，因此二者库的二进制是不兼容的。<br>本文仅限于介绍linux下的库。</p>
+<h2 id="库的意义是什么？"><a href="#库的意义是什么？" class="headerlink" title="库的意义是什么？"></a>库的意义是什么？</h2><p>库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。<br>现实中每个程序都要依赖很多基础的底层库，不可能每个人的代码都从零开始，因此库的存在意义非同寻常。<br>共享库的好处是，不同的应用程序如果调用相同的库，那么在内存里只需要有一份该共享库的实例。</p>
+<h2 id="库文件有什么规范吗？"><a href="#库文件有什么规范吗？" class="headerlink" title="库文件有什么规范吗？"></a>库文件有什么规范吗？</h2><p>在linux下，库文件一般放在<code>/usr/lib /lib</code>下。而在我的CentOS 7环境里，库文件大多数被放在了<code>/usr/lib64</code>目录下。<br>静态库的名字一般为<code>libxxxx.a</code>，其中xxxx是该lib的名称<br>动态库的名字一般为<code>libxxxx.so.major.minor</code>，xxxx是该lib的名称，major是主版本号， minor是副版本号</p>
+<h2 id="什么是静态链接？什么是静态库？和动态库的区别是什么？"><a href="#什么是静态链接？什么是静态库？和动态库的区别是什么？" class="headerlink" title="什么是静态链接？什么是静态库？和动态库的区别是什么？"></a>什么是静态链接？什么是静态库？和动态库的区别是什么？</h2><p>要回答这个问题，我们首先来看一看什么是静态库。<br>在Linux下有两种库，一种是静态库（<em>.a），一种是动态库（</em>.so）（也被叫做共享库），其对应着不同的生成与使用方式。二者的不同点在于代码被载入的时刻不同。<br>静态库的代码在编译过程中已经被载入可执行程序，因此体积较大。<br>共享库的代码是在可执行程序运行时才载入内存的，在编译过程中仅简单的引用，因此代码体积较小。</p>
+<h2 id="怎么让系统找到我写的库？"><a href="#怎么让系统找到我写的库？" class="headerlink" title="怎么让系统找到我写的库？"></a>怎么让系统找到我写的库？</h2><p>如果安装在<code>/lib</code>或者<code>/usr/lib</code>下，那么ld默认能够找到，无需其他操作。<br>如果安装在其他目录，需要将其添加到<code>/etc/ld.so.cache</code>文件中，步骤如下<br>1.编辑<code>/etc/ld.so.conf</code>文件，加入库文件所在目录的路径<br>2.运行<code>ldconfig</code>，该命令会重建<code>/etc/ld.so.cache</code>文件</p>
+<h2 id="如何知道一个可执行程序依赖哪些库？"><a href="#如何知道一个可执行程序依赖哪些库？" class="headerlink" title="如何知道一个可执行程序依赖哪些库？"></a>如何知道一个可执行程序依赖哪些库？</h2><p>ldd命令可以查看一个可执行程序依赖的共享库。<br>例如，现在有一个<code>test.c</code>文件，代码十分简单</p>
+<pre><code>//test.c
+#include &lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;Hello,world\n&quot;);
+    return 0;
+}
+
+</code></pre><p><a href="https://postimg.cc/MvbnW0w2" target="_blank" rel="noopener"><img src="https://i.postimg.cc/HsFX93Px/page3image12980288.png" alt="page3image12980288.png"></a></p>
+<h1 id="正文部分"><a href="#正文部分" class="headerlink" title="正文部分"></a>正文部分</h1><h2 id="gcc-g-静态编译环境配置"><a href="#gcc-g-静态编译环境配置" class="headerlink" title="gcc/g++静态编译环境配置"></a>gcc/g++静态编译环境配置</h2><h3 id="gcc静态编译环境配置"><a href="#gcc静态编译环境配置" class="headerlink" title="gcc静态编译环境配置"></a>gcc静态编译环境配置</h3><p>yum安装glibc-static库<br><code>yum install glibc-static</code><br>如果不安装上述库，事实上也可以用gcc静态编译简单的c文件，实现方法是使用locate命令在系统中搜索libc.a文件<br><code>locate libc.a</code><br>将该路径拷贝并在gcc中加上-L参数，就可以编译成功<br>假设路径是</p>
+<pre><code>/usr/lib/x86_64-redhat-linux6E/lib64 -static
+</code></pre><p>那么可以使用gcc命令</p>
+<pre><code>$ gcc main_printf.c -o main_printf_static -L/usr/lib/x86_64-redhat-linux6E/lib64 -static
+</code></pre><p>生成可执行文件后，使用ldd命令查看</p>
+<pre><code>ldd main_printf_static
+</code></pre><p>会发现其提示不是动态可执行文件，说明该可执行文件所有的库都已经静态链接到其中。<br>使用size命令查看可执行文件大小</p>
+<pre><code>size main_printf_static
+</code></pre><p>会发现该可执行文件大小远远大于正常生成的可执行文件。</p>
+<p>但使用这种方法，使用g++编译c++文件时就会产生一系列错误</p>
+<hr>
+<p>在使用上述yum命令安装glibc-static库后， 静态编译C文件就不再需要额外的-L选项。</p>
+<h3 id="g-静态编译环境配置"><a href="#g-静态编译环境配置" class="headerlink" title="g++静态编译环境配置"></a>g++静态编译环境配置</h3><p>运行yum安装libstdc++库</p>
+<pre><code>yum install libstdc++-static
+</code></pre><p>安装完后再次编译，就可以顺利通过编译。</p>
+<p>至此，CentOS 7环境的gcc/g++静态编译环境配置顺利完成。</p>
+<h2 id="使用g-静态链接MySQL库到可执行文件中"><a href="#使用g-静态链接MySQL库到可执行文件中" class="headerlink" title="使用g++静态链接MySQL库到可执行文件中"></a>使用g++静态链接MySQL库到可执行文件中</h2><h3 id="使用g-编译含有MySQL函数的代码"><a href="#使用g-编译含有MySQL函数的代码" class="headerlink" title="使用g++编译含有MySQL函数的代码"></a>使用g++编译含有MySQL函数的代码</h3><p>安装mysql c++库<br>todo</p>
+<p>假如当前目录有cpp文件<code>mysql_demo.cpp</code>，其中调用了MySQL的API。<br>首先使用g++编译</p>
+<pre><code>g++ -c mysql_demo.cpp \
+    $(shell mysql_config --cflags)
+</code></pre><p>值得一提的是，MySQL提供了路径的shell config命令，上述参数<code>$(shell mysql_config --cflags)</code>就是调用了该条命令，把所需的库自动加入到g++命令当中。<br>然后使用g++生成可执行文件</p>
+<pre><code>g++ -o mysql_demo mysql_demo.o \
+    $(shell mysql_config --libs)
+</code></pre><p>此时的可执行文件是所有的库都是动态链接，我们的目的就是将其改为全静态链接</p>
+<h3 id="使用g-静态链接含有MySQL函数的代码"><a href="#使用g-静态链接含有MySQL函数的代码" class="headerlink" title="使用g++静态链接含有MySQL函数的代码"></a>使用g++静态链接含有MySQL函数的代码</h3><p>首先尝试直接在g++编译命令后面加上-􏰂􏰇stat􏰇ic，发现报大量错误，此处不一一截图。<br><a href="https://postimg.cc/Jy8zKk3q" target="_blank" rel="noopener"><img src="https://i.postimg.cc/wByRq57S/page1image12963488.png" alt="page1image12963488.png"></a><br>尝试安装缺失的库</p>
+<pre><code>yum install openssl-static
+yum install zlib-static
+</code></pre><p>安装完后再次编译，发现错误有一定程度的减少，但无法完全消除。一个难以解决的问题是ld程序不断提示缺少krb5库，查询后发现该库已经不再提供static库。<br>这种情况下，我做出了两种选择：</p>
+<h4 id="Choice-1-放弃全静态编译，只静态链接MySQL的部分"><a href="#Choice-1-放弃全静态编译，只静态链接MySQL的部分" class="headerlink" title="Choice 1  放弃全静态编译，只静态链接MySQL的部分"></a>Choice 1  放弃全静态编译，只静态链接MySQL的部分</h4><p>具体的方法是在g++命令中显式指定/usr/lib64中的libmysqlclient.a而不加-static选项进行编译。部分选项如下</p>
+<pre><code>g++ mysql_demo.o -o mysql_demo /usr/lib64/libmysqlclient.a
+</code></pre><p>此时可以生成可执行文件，且对该可执行文件使用ldd命令，发现其中已经不含与mysql有关的库。</p>
+<h4 id="Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件"><a href="#Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件" class="headerlink" title="Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件"></a>Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件</h4><p>朋友告诉我，想要全静态链接MySQL库，需要使用特定版本的libmysqlclient.a文件。因此在下列网址下载mysql-connector-c-devel-6.1.11-1.el6.x86_64.rpm文件<br><code>http://ftp.ntu.edu.tw/MySQL/Downloads/Connector-C/</code><br>解压得到mysql-connector-c-devel.cpio文件，查询资料后发现其依然是压缩文件，使用<code>cpis -idmv &lt; mysql-connector-c-devel.cpio</code>命令解压后得到usr文件夹<br><a href="https://postimg.cc/zbB5PSyn" target="_blank" rel="noopener"><img src="https://i.postimg.cc/gJyJjgdB/page3image13008112.png" alt="page3image13008112.png"></a><br>其中的<code>lib64/mysql</code>文件夹中含有libmysqlclient.a文件，将其发送到Linux目录下，设定链接路径后发现可以顺利使用<code>-static</code>选项进行编译。</p>
+<pre><code>g++ -c mysql_demo.cpp $(mysql_config --cflags)
+g++ -o mysql_demo mysql_demo.o ./libmysqlclient.a /usr/lib/gcc/x86_64-redhat-linux/4.8.2/libstdc++.a -lpthread -lssl -lcrypto -ldl $(LIB_Z) -static
+</code></pre><p>编译后用ldd命令查看可执行文件，提示不是动态可执行文件。</p>
 
       
     </div>
@@ -516,6 +566,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+        </div>
+      
 
       
       
@@ -545,14 +603,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/10/12/用Github-Pages和Hexo搭建个人博客/" rel="next" title="用Github Pages和Hexo搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 用Github Pages和Hexo搭建个人博客
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/undefined.html" rel="prev" title="用Github Pages和Hexo搭建个人博客">
-                用Github Pages和Hexo搭建个人博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/在Windows下配置编译Carla环境/" rel="prev" title="在Windows下配置编译Carla环境">
+                在Windows下配置编译Carla环境 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -738,7 +800,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我为什么要开始写博客"><span class="nav-number">1.</span> <span class="nav-text">我为什么要开始写博客</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在CentOS-7-下静态链接MySQL库"><span class="nav-number">1.</span> <span class="nav-text">在CentOS 7 下静态链接MySQL库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面的一些话"><span class="nav-number">2.</span> <span class="nav-text">写在前面的一些话</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是库？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是库？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#库的意义是什么？"><span class="nav-number">2.2.</span> <span class="nav-text">库的意义是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#库文件有什么规范吗？"><span class="nav-number">2.3.</span> <span class="nav-text">库文件有什么规范吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是静态链接？什么是静态库？和动态库的区别是什么？"><span class="nav-number">2.4.</span> <span class="nav-text">什么是静态链接？什么是静态库？和动态库的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么让系统找到我写的库？"><span class="nav-number">2.5.</span> <span class="nav-text">怎么让系统找到我写的库？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何知道一个可执行程序依赖哪些库？"><span class="nav-number">2.6.</span> <span class="nav-text">如何知道一个可执行程序依赖哪些库？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文部分"><span class="nav-number">3.</span> <span class="nav-text">正文部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gcc-g-静态编译环境配置"><span class="nav-number">3.1.</span> <span class="nav-text">gcc/g++静态编译环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc静态编译环境配置"><span class="nav-number">3.1.1.</span> <span class="nav-text">gcc静态编译环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#g-静态编译环境配置"><span class="nav-number">3.1.2.</span> <span class="nav-text">g++静态编译环境配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用g-静态链接MySQL库到可执行文件中"><span class="nav-number">3.2.</span> <span class="nav-text">使用g++静态链接MySQL库到可执行文件中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用g-编译含有MySQL函数的代码"><span class="nav-number">3.2.1.</span> <span class="nav-text">使用g++编译含有MySQL函数的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用g-静态链接含有MySQL函数的代码"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用g++静态链接含有MySQL函数的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Choice-1-放弃全静态编译，只静态链接MySQL的部分"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">Choice 1  放弃全静态编译，只静态链接MySQL的部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
