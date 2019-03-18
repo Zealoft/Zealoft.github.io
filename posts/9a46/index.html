@@ -989,7 +989,7 @@ g++ -o mysql_demo mysql_demo.o ./libmysqlclient.a /usr/lib/gcc/x86_64-redhat-lin
           owner: 'Zealoft',
           admin: ['Zealoft'],
           id: location.pathname,
-          labels: 'gitalk',
+          labels: 'gitalk'.split(',').filter(l => l),
           perPage: 15,
           pagerDirection: 'last',
           createIssueManually: true,
