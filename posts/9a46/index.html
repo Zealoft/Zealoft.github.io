@@ -112,25 +112,29 @@
 
 
 
-  <meta name="description" content="前言​    由于最近实验室需要在Windows 10上配置Carla环境，而Carla在Windows下面的配置编译过程一直存在比较大的问题。最近用了一些精力尝试解决这一问题，最终虽然没有100%完美地解决问题（官方给出的搭建方法依然暂时无效，等待后续跟进），但已经可以完整地运行各类功能库，因此在这里记录一下我的解决方案。 详细步骤Step 1：下载相关资源​    配置好相关的依赖，将Git/">
-<meta name="keywords" content="Windows,无人驾驶,Carla">
+  <meta name="description" content="在CentOS 7 下静态链接MySQL库写在前面的一些话什么是库？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。">
+<meta name="keywords" content="Linux,MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Windows下配置编译Carla环境">
-<meta property="og:url" content="http://yoursite.com/posts/c954">
+<meta property="og:title" content="在CentOS 7 下静态链接MySQL库">
+<meta property="og:url" content="http://yoursite.com/posts/9a46/index.html">
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
-<meta property="og:description" content="前言​    由于最近实验室需要在Windows 10上配置Carla环境，而Carla在Windows下面的配置编译过程一直存在比较大的问题。最近用了一些精力尝试解决这一问题，最终虽然没有100%完美地解决问题（官方给出的搭建方法依然暂时无效，等待后续跟进），但已经可以完整地运行各类功能库，因此在这里记录一下我的解决方案。 详细步骤Step 1：下载相关资源​    配置好相关的依赖，将Git/">
+<meta property="og:description" content="在CentOS 7 下静态链接MySQL库写在前面的一些话什么是库？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-18T04:31:47.506Z">
+<meta property="og:image" content="https://i.postimg.cc/HsFX93Px/page3image12980288.png">
+<meta property="og:image" content="https://i.postimg.cc/wByRq57S/page1image12963488.png">
+<meta property="og:image" content="https://i.postimg.cc/gJyJjgdB/page3image13008112.png">
+<meta property="og:updated_time" content="2019-03-18T04:31:47.509Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Windows下配置编译Carla环境">
-<meta name="twitter:description" content="前言​    由于最近实验室需要在Windows 10上配置Carla环境，而Carla在Windows下面的配置编译过程一直存在比较大的问题。最近用了一些精力尝试解决这一问题，最终虽然没有100%完美地解决问题（官方给出的搭建方法依然暂时无效，等待后续跟进），但已经可以完整地运行各类功能库，因此在这里记录一下我的解决方案。 详细步骤Step 1：下载相关资源​    配置好相关的依赖，将Git/">
+<meta name="twitter:title" content="在CentOS 7 下静态链接MySQL库">
+<meta name="twitter:description" content="在CentOS 7 下静态链接MySQL库写在前面的一些话什么是库？事实上，在windows平台和linux平台下都大量存在着库。本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。由于windows和linux的本质不同，因此二者库的二进制是不兼容的。本文仅限于介绍linux下的库。 库的意义是什么？库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。">
+<meta name="twitter:image" content="https://i.postimg.cc/HsFX93Px/page3image12980288.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/c954"/>
+  <link rel="canonical" href="http://yoursite.com/posts/9a46/"/>
 
 
 
@@ -140,7 +144,7 @@
   };
 </script>
 
-  <title>在Windows下配置编译Carla环境 | Zealoft's Blog</title>
+  <title>在CentOS 7 下静态链接MySQL库 | Zealoft's Blog</title>
   
 
 
@@ -344,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/c954">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/9a46/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zealoft">
@@ -361,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在Windows下配置编译Carla环境
+          <h1 class="post-title" itemprop="name headline">在CentOS 7 下静态链接MySQL库
               
             
           </h1>
@@ -386,7 +390,7 @@
                 
               
 
-              <time title="创建时间：2019-03-08 23:27:33" itemprop="dateCreated datePublished" datetime="2019-03-08T23:27:33+08:00">2019-03-08</time>
+              <time title="创建时间：2018-10-12 18:32:49" itemprop="dateCreated datePublished" datetime="2018-10-12T18:32:49+08:00">2018-10-12</time>
             
 
             
@@ -420,7 +424,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Carla/" itemprop="url" rel="index"><span itemprop="name">Carla</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -434,7 +438,7 @@
 
           
           
-             <span id="/posts/c954" class="leancloud_visitors" data-flag-title="在Windows下配置编译Carla环境">
+             <span id="/posts/9a46/" class="leancloud_visitors" data-flag-title="在CentOS 7 下静态链接MySQL库">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -465,27 +469,56 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    由于最近实验室需要在Windows 10上配置Carla环境，而Carla在Windows下面的配置编译过程一直存在比较大的问题。最近用了一些精力尝试解决这一问题，最终虽然没有100%完美地解决问题（官方给出的搭建方法依然暂时无效，等待后续跟进），但已经可以完整地运行各类功能库，因此在这里记录一下我的解决方案。</p>
-<h2 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h2><h3 id="Step-1：下载相关资源"><a href="#Step-1：下载相关资源" class="headerlink" title="Step 1：下载相关资源"></a>Step 1：下载相关资源</h3><p>​    配置好相关的依赖，将Git/Make/CMake/Python3/VS相关环境安装完成后（详见<a href="https://carla.readthedocs.io/en/latest/how_to_build_on_windows/" target="_blank" rel="noopener">How to build on Windows</a>），安装Unreal Engine 4.21，之后打开一个“适用于VS 2017的 x64 本机工具命令提示”程序（<strong>注意</strong>，此处不能使用Windows的powershell或者cmd，否则会在make时出现问题），将carla的repository克隆到本地。</p>
-<pre><code class="powershell">git clone https://github.com/carla-simulator/carla.git
-</code></pre>
-<p>​    随后，需要下载内容包，下载网址在\Util\ContentVersions.txt中。下载完成后将其解压到Unreal\CarlaUE4\Content\Carla中（需要创建新目录）。</p>
-<p>​    另外，由于Windows上依然存在make PythonAPI出错的问题，因此需要额外下载官方给出的编译完成的打包，下载地址为<a href="https://github.com/carla-simulator/carla/releases/tag/0.9.4。下载完成后可以把它解压到任意一个文件夹中，等待后续过程使用。" target="_blank" rel="noopener">https://github.com/carla-simulator/carla/releases/tag/0.9.4。下载完成后可以把它解压到任意一个文件夹中，等待后续过程使用。</a></p>
-<p>​    需要注意的是，上述的两个需要下载的内容都是存放在Google Drive中的文件，因此需要科学上网进行下载。</p>
-<h3 id="Step-2：构建Carla组件"><a href="#Step-2：构建Carla组件" class="headerlink" title="Step 2：构建Carla组件"></a>Step 2：构建Carla组件</h3><p>​    完成上述的下载步骤后，就可以开始进行Carla的build。进入新创建的目录，并开始进行构建操作：</p>
-<pre><code class="shell">cd carla
-make launch
-</code></pre>
-<p>​    上述的make launch需要花费较长的时间，make程序还会自动下载zlib等Windows上编译的依赖组件（新版本才会自动下载，在比较旧的版本如0.9.2以前，需要手动编译依赖库）。如果步骤1中的环境都已经配置完成，并且已经正确安装了对应版本的Unreal Engine，此处应该能顺利编译，并打开一个Unreal Engine Editor窗口。</p>
-<p>​    在新打开的Editor窗口中，我们可以点击右上角的播放按钮来新生成一个Carla运行实例。需要注意的是，在后续的Server-Client连接中程序默认指定的端口号为2000，因此需要用播放按钮旁边的设置按钮来配置端口号。</p>
-<p>​    一切顺利后，我们就可以按照官方文档中给出的来尝试运行PythonAPI目录下的几个py文件。但不出意外，运行后报错：No module named carla。可以想到是Python库尚未编译完成。因此我们还需要进行PythonAPI的配置。</p>
-<h3 id="Step-3：构建Python库"><a href="#Step-3：构建Python库" class="headerlink" title="Step 3：构建Python库"></a>Step 3：构建Python库</h3><p>​    首先尝试借助官方的Makefile中的方法尝试进行构建：</p>
-<pre><code class="shell">    make PythonAPI
-</code></pre>
-<p>​    经过一段时间的构建后，出现了链接错误的Error。虽然最后一行的提示是successfully built，但是实际上并没有生成任何文件。经过一段时间的查找无果后，最终决定借助官方已经编译好的压缩文件，就是上述我们单独下载的第二个文件。</p>
-<p>​    我们将压缩文件解压，并且将所有文件（不含目录）复制到carla的根目录下，并且将PythonAPI目录下的.egg文件复制到carla的PythonAPI中。</p>
-<p>​    此时，由于我们已经将压缩文件中含有的大量python文件放到Carla的根目录，因此直接运行这些文件即可。我们随便挑一个manual_control.py尝试运行，发现再次报错。不过仔细一看，发现不再是no module named carla的错误，而是提示缺少.dll文件！这算是一个不小的进步，查阅相关issue后得知，我们只需把Build\zlib-install\bin中的zlib.dll放到根目录，再次尝试运行，boom！我们终于可以成功地运行含有carla库的python代码了！</p>
-<h2 id="一些不足的地方"><a href="#一些不足的地方" class="headerlink" title="一些不足的地方"></a>一些不足的地方</h2><p>​    本文章所述的方法还是存在一些缺陷。主要是含有carla库的python代码只能在carla根目录运行，一旦放到其他位置依然会提示没有对应的模块的问题。Windows上面编译模块的确会出现很多麻烦，这大概也是Linux受开发者欢迎的原因。</p>
+        <h1 id="在CentOS-7-下静态链接MySQL库"><a href="#在CentOS-7-下静态链接MySQL库" class="headerlink" title="在CentOS 7 下静态链接MySQL库"></a>在CentOS 7 下静态链接MySQL库</h1><h1 id="写在前面的一些话"><a href="#写在前面的一些话" class="headerlink" title="写在前面的一些话"></a>写在前面的一些话</h1><h2 id="什么是库？"><a href="#什么是库？" class="headerlink" title="什么是库？"></a>什么是库？</h2><p>事实上，在windows平台和linux平台下都大量存在着库。<br>本质上来说库是一种可执行代码的二进制形式，可以被操作系统载入内存执行。<br>由于windows和linux的本质不同，因此二者库的二进制是不兼容的。<br>本文仅限于介绍linux下的库。</p>
+<h2 id="库的意义是什么？"><a href="#库的意义是什么？" class="headerlink" title="库的意义是什么？"></a>库的意义是什么？</h2><p>库是别人写好的现有的，成熟的，可以复用的代码，你可以使用但要记得遵守许可协议。<br>现实中每个程序都要依赖很多基础的底层库，不可能每个人的代码都从零开始，因此库的存在意义非同寻常。<br>共享库的好处是，不同的应用程序如果调用相同的库，那么在内存里只需要有一份该共享库的实例。</p>
+<h2 id="库文件有什么规范吗？"><a href="#库文件有什么规范吗？" class="headerlink" title="库文件有什么规范吗？"></a>库文件有什么规范吗？</h2><p>在linux下，库文件一般放在<code>/usr/lib /lib</code>下。而在我的CentOS 7环境里，库文件大多数被放在了<code>/usr/lib64</code>目录下。<br>静态库的名字一般为<code>libxxxx.a</code>，其中xxxx是该lib的名称<br>动态库的名字一般为<code>libxxxx.so.major.minor</code>，xxxx是该lib的名称，major是主版本号， minor是副版本号</p>
+<h2 id="什么是静态链接？什么是静态库？和动态库的区别是什么？"><a href="#什么是静态链接？什么是静态库？和动态库的区别是什么？" class="headerlink" title="什么是静态链接？什么是静态库？和动态库的区别是什么？"></a>什么是静态链接？什么是静态库？和动态库的区别是什么？</h2><p>要回答这个问题，我们首先来看一看什么是静态库。<br>在Linux下有两种库，一种是静态库（<em>.a），一种是动态库（</em>.so）（也被叫做共享库），其对应着不同的生成与使用方式。二者的不同点在于代码被载入的时刻不同。<br>静态库的代码在编译过程中已经被载入可执行程序，因此体积较大。<br>共享库的代码是在可执行程序运行时才载入内存的，在编译过程中仅简单的引用，因此代码体积较小。</p>
+<h2 id="怎么让系统找到我写的库？"><a href="#怎么让系统找到我写的库？" class="headerlink" title="怎么让系统找到我写的库？"></a>怎么让系统找到我写的库？</h2><p>如果安装在<code>/lib</code>或者<code>/usr/lib</code>下，那么ld默认能够找到，无需其他操作。<br>如果安装在其他目录，需要将其添加到<code>/etc/ld.so.cache</code>文件中，步骤如下<br>1.编辑<code>/etc/ld.so.conf</code>文件，加入库文件所在目录的路径<br>2.运行<code>ldconfig</code>，该命令会重建<code>/etc/ld.so.cache</code>文件</p>
+<h2 id="如何知道一个可执行程序依赖哪些库？"><a href="#如何知道一个可执行程序依赖哪些库？" class="headerlink" title="如何知道一个可执行程序依赖哪些库？"></a>如何知道一个可执行程序依赖哪些库？</h2><p>ldd命令可以查看一个可执行程序依赖的共享库。<br>例如，现在有一个<code>test.c</code>文件，代码十分简单</p>
+<pre><code>//test.c
+#include &lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;Hello,world\n&quot;);
+    return 0;
+}
+
+</code></pre><p><a href="https://postimg.cc/MvbnW0w2" target="_blank" rel="noopener"><img src="https://i.postimg.cc/HsFX93Px/page3image12980288.png" alt="page3image12980288.png"></a></p>
+<h1 id="正文部分"><a href="#正文部分" class="headerlink" title="正文部分"></a>正文部分</h1><h2 id="gcc-g-静态编译环境配置"><a href="#gcc-g-静态编译环境配置" class="headerlink" title="gcc/g++静态编译环境配置"></a>gcc/g++静态编译环境配置</h2><h3 id="gcc静态编译环境配置"><a href="#gcc静态编译环境配置" class="headerlink" title="gcc静态编译环境配置"></a>gcc静态编译环境配置</h3><p>yum安装glibc-static库<br><code>yum install glibc-static</code><br>如果不安装上述库，事实上也可以用gcc静态编译简单的c文件，实现方法是使用locate命令在系统中搜索libc.a文件<br><code>locate libc.a</code><br>将该路径拷贝并在gcc中加上-L参数，就可以编译成功<br>假设路径是</p>
+<pre><code>/usr/lib/x86_64-redhat-linux6E/lib64 -static
+</code></pre><p>那么可以使用gcc命令</p>
+<pre><code>$ gcc main_printf.c -o main_printf_static -L/usr/lib/x86_64-redhat-linux6E/lib64 -static
+</code></pre><p>生成可执行文件后，使用ldd命令查看</p>
+<pre><code>ldd main_printf_static
+</code></pre><p>会发现其提示不是动态可执行文件，说明该可执行文件所有的库都已经静态链接到其中。<br>使用size命令查看可执行文件大小</p>
+<pre><code>size main_printf_static
+</code></pre><p>会发现该可执行文件大小远远大于正常生成的可执行文件。</p>
+<p>但使用这种方法，使用g++编译c++文件时就会产生一系列错误</p>
+<hr>
+<p>在使用上述yum命令安装glibc-static库后， 静态编译C文件就不再需要额外的-L选项。</p>
+<h3 id="g-静态编译环境配置"><a href="#g-静态编译环境配置" class="headerlink" title="g++静态编译环境配置"></a>g++静态编译环境配置</h3><p>运行yum安装libstdc++库</p>
+<pre><code>yum install libstdc++-static
+</code></pre><p>安装完后再次编译，就可以顺利通过编译。</p>
+<p>至此，CentOS 7环境的gcc/g++静态编译环境配置顺利完成。</p>
+<h2 id="使用g-静态链接MySQL库到可执行文件中"><a href="#使用g-静态链接MySQL库到可执行文件中" class="headerlink" title="使用g++静态链接MySQL库到可执行文件中"></a>使用g++静态链接MySQL库到可执行文件中</h2><h3 id="使用g-编译含有MySQL函数的代码"><a href="#使用g-编译含有MySQL函数的代码" class="headerlink" title="使用g++编译含有MySQL函数的代码"></a>使用g++编译含有MySQL函数的代码</h3><p>安装mysql c++库<br>todo</p>
+<p>假如当前目录有cpp文件<code>mysql_demo.cpp</code>，其中调用了MySQL的API。<br>首先使用g++编译</p>
+<pre><code>g++ -c mysql_demo.cpp \
+    $(shell mysql_config --cflags)
+</code></pre><p>值得一提的是，MySQL提供了路径的shell config命令，上述参数<code>$(shell mysql_config --cflags)</code>就是调用了该条命令，把所需的库自动加入到g++命令当中。<br>然后使用g++生成可执行文件</p>
+<pre><code>g++ -o mysql_demo mysql_demo.o \
+    $(shell mysql_config --libs)
+</code></pre><p>此时的可执行文件是所有的库都是动态链接，我们的目的就是将其改为全静态链接</p>
+<h3 id="使用g-静态链接含有MySQL函数的代码"><a href="#使用g-静态链接含有MySQL函数的代码" class="headerlink" title="使用g++静态链接含有MySQL函数的代码"></a>使用g++静态链接含有MySQL函数的代码</h3><p>首先尝试直接在g++编译命令后面加上-􏰂􏰇stat􏰇ic，发现报大量错误，此处不一一截图。<br><a href="https://postimg.cc/Jy8zKk3q" target="_blank" rel="noopener"><img src="https://i.postimg.cc/wByRq57S/page1image12963488.png" alt="page1image12963488.png"></a><br>尝试安装缺失的库</p>
+<pre><code>yum install openssl-static
+yum install zlib-static
+</code></pre><p>安装完后再次编译，发现错误有一定程度的减少，但无法完全消除。一个难以解决的问题是ld程序不断提示缺少krb5库，查询后发现该库已经不再提供static库。<br>这种情况下，我做出了两种选择：</p>
+<h4 id="Choice-1-放弃全静态编译，只静态链接MySQL的部分"><a href="#Choice-1-放弃全静态编译，只静态链接MySQL的部分" class="headerlink" title="Choice 1  放弃全静态编译，只静态链接MySQL的部分"></a>Choice 1  放弃全静态编译，只静态链接MySQL的部分</h4><p>具体的方法是在g++命令中显式指定/usr/lib64中的libmysqlclient.a而不加-static选项进行编译。部分选项如下</p>
+<pre><code>g++ mysql_demo.o -o mysql_demo /usr/lib64/libmysqlclient.a
+</code></pre><p>此时可以生成可执行文件，且对该可执行文件使用ldd命令，发现其中已经不含与mysql有关的库。</p>
+<h4 id="Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件"><a href="#Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件" class="headerlink" title="Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件"></a>Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件</h4><p>朋友告诉我，想要全静态链接MySQL库，需要使用特定版本的libmysqlclient.a文件。因此在下列网址下载mysql-connector-c-devel-6.1.11-1.el6.x86_64.rpm文件<br><code>http://ftp.ntu.edu.tw/MySQL/Downloads/Connector-C/</code><br>解压得到mysql-connector-c-devel.cpio文件，查询资料后发现其依然是压缩文件，使用<code>cpis -idmv &lt; mysql-connector-c-devel.cpio</code>命令解压后得到usr文件夹<br><a href="https://postimg.cc/zbB5PSyn" target="_blank" rel="noopener"><img src="https://i.postimg.cc/gJyJjgdB/page3image13008112.png" alt="page3image13008112.png"></a><br>其中的<code>lib64/mysql</code>文件夹中含有libmysqlclient.a文件，将其发送到Linux目录下，设定链接路径后发现可以顺利使用<code>-static</code>选项进行编译。</p>
+<pre><code>g++ -c mysql_demo.cpp $(mysql_config --cflags)
+g++ -o mysql_demo mysql_demo.o ./libmysqlclient.a /usr/lib/gcc/x86_64-redhat-linux/4.8.2/libstdc++.a -lpthread -lssl -lcrypto -ldl $(LIB_Z) -static
+</code></pre><p>编译后用ldd命令查看可执行文件，提示不是动态可执行文件。</p>
 
       
     </div>
@@ -535,11 +568,9 @@ make launch
       
         <div class="post-tags">
           
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/无人驾驶/" rel="tag"># 无人驾驶</a>
-          
-            <a href="/tags/Carla/" rel="tag"># Carla</a>
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           
         </div>
       
@@ -572,8 +603,8 @@ make launch
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/9a46" rel="next" title="在CentOS 7 下静态链接MySQL库">
-                <i class="fa fa-chevron-left"></i> 在CentOS 7 下静态链接MySQL库
+              <a href="/posts/e26/" rel="next" title="用Github Pages和Hexo搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 用Github Pages和Hexo搭建个人博客
               </a>
             
           </div>
@@ -582,8 +613,8 @@ make launch
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/f176" rel="prev" title="Windows WPF编程(1) XAML的基本使用">
-                Windows WPF编程(1) XAML的基本使用 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/c954/" rel="prev" title="在Windows下配置编译Carla环境">
+                在Windows下配置编译Carla环境 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -769,7 +800,7 @@ make launch
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细步骤"><span class="nav-number">2.</span> <span class="nav-text">详细步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1：下载相关资源"><span class="nav-number">2.1.</span> <span class="nav-text">Step 1：下载相关资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2：构建Carla组件"><span class="nav-number">2.2.</span> <span class="nav-text">Step 2：构建Carla组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3：构建Python库"><span class="nav-number">2.3.</span> <span class="nav-text">Step 3：构建Python库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些不足的地方"><span class="nav-number">3.</span> <span class="nav-text">一些不足的地方</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在CentOS-7-下静态链接MySQL库"><span class="nav-number">1.</span> <span class="nav-text">在CentOS 7 下静态链接MySQL库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面的一些话"><span class="nav-number">2.</span> <span class="nav-text">写在前面的一些话</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是库？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是库？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#库的意义是什么？"><span class="nav-number">2.2.</span> <span class="nav-text">库的意义是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#库文件有什么规范吗？"><span class="nav-number">2.3.</span> <span class="nav-text">库文件有什么规范吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是静态链接？什么是静态库？和动态库的区别是什么？"><span class="nav-number">2.4.</span> <span class="nav-text">什么是静态链接？什么是静态库？和动态库的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么让系统找到我写的库？"><span class="nav-number">2.5.</span> <span class="nav-text">怎么让系统找到我写的库？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何知道一个可执行程序依赖哪些库？"><span class="nav-number">2.6.</span> <span class="nav-text">如何知道一个可执行程序依赖哪些库？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文部分"><span class="nav-number">3.</span> <span class="nav-text">正文部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gcc-g-静态编译环境配置"><span class="nav-number">3.1.</span> <span class="nav-text">gcc/g++静态编译环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc静态编译环境配置"><span class="nav-number">3.1.1.</span> <span class="nav-text">gcc静态编译环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#g-静态编译环境配置"><span class="nav-number">3.1.2.</span> <span class="nav-text">g++静态编译环境配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用g-静态链接MySQL库到可执行文件中"><span class="nav-number">3.2.</span> <span class="nav-text">使用g++静态链接MySQL库到可执行文件中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用g-编译含有MySQL函数的代码"><span class="nav-number">3.2.1.</span> <span class="nav-text">使用g++编译含有MySQL函数的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用g-静态链接含有MySQL函数的代码"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用g++静态链接含有MySQL函数的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Choice-1-放弃全静态编译，只静态链接MySQL的部分"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">Choice 1  放弃全静态编译，只静态链接MySQL的部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Choice-2-放弃该版本的MySQL，在线下载mysqlclient-a文件"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">Choice 2  放弃该版本的MySQL，在线下载mysqlclient.a文件</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
