@@ -115,14 +115,14 @@
   <meta name="description" content="写在前面​        由于最近实验室有进行交通仿真的任务，需要导入Opendrive地图路网信息并且进行交通仿真，并配合Python API进行通信，起初老师指定使用Vissim进行仿真，但由于学生版的Visssim不能使用Script写Python脚本，旧版本又不能支持Opendrive导入，于是又在网上发现了开源的交通仿真软件SUMO，但这个软件大部分的操作都是在命令行下完成，因此在这里记">
 <meta name="keywords" content="Windows,无人驾驶,SUMO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Windows下使用SUMO进行交通仿真">
+<meta property="og:title" content="在Windows下使用SUMO进行交通仿真（1）">
 <meta property="og:url" content="http://yoursite.com/posts/1628551222/index.html">
 <meta property="og:site_name" content="Zealoft&#39;s Blog">
 <meta property="og:description" content="写在前面​        由于最近实验室有进行交通仿真的任务，需要导入Opendrive地图路网信息并且进行交通仿真，并配合Python API进行通信，起初老师指定使用Vissim进行仿真，但由于学生版的Visssim不能使用Script写Python脚本，旧版本又不能支持Opendrive导入，于是又在网上发现了开源的交通仿真软件SUMO，但这个软件大部分的操作都是在命令行下完成，因此在这里记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-24T14:43:39.733Z">
+<meta property="og:updated_time" content="2019-04-11T04:14:29.274Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Windows下使用SUMO进行交通仿真">
+<meta name="twitter:title" content="在Windows下使用SUMO进行交通仿真（1）">
 <meta name="twitter:description" content="写在前面​        由于最近实验室有进行交通仿真的任务，需要导入Opendrive地图路网信息并且进行交通仿真，并配合Python API进行通信，起初老师指定使用Vissim进行仿真，但由于学生版的Visssim不能使用Script写Python脚本，旧版本又不能支持Opendrive导入，于是又在网上发现了开源的交通仿真软件SUMO，但这个软件大部分的操作都是在命令行下完成，因此在这里记">
 
 
@@ -140,7 +140,7 @@
   };
 </script>
 
-  <title>在Windows下使用SUMO进行交通仿真 | Zealoft's Blog</title>
+  <title>在Windows下使用SUMO进行交通仿真（1） | Zealoft's Blog</title>
   
 
 
@@ -361,7 +361,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在Windows下使用SUMO进行交通仿真
+          <h1 class="post-title" itemprop="name headline">在Windows下使用SUMO进行交通仿真（1）
               
             
           </h1>
@@ -386,12 +386,24 @@
                 
               
 
-              <time title="创建时间：2019-03-24 22:36:45 / 修改时间：22:43:39" itemprop="dateCreated datePublished" datetime="2019-03-24T22:36:45+08:00">2019-03-24</time>
+              <time title="创建时间：2019-03-24 22:36:45" itemprop="dateCreated datePublished" datetime="2019-03-24T22:36:45+08:00">2019-03-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-11 12:14:29" itemprop="dateModified" datetime="2019-04-11T12:14:29+08:00">2019-04-11</time>
               
             
           </span>
@@ -422,7 +434,7 @@
 
           
           
-             <span id="/posts/1628551222/" class="leancloud_visitors" data-flag-title="在Windows下使用SUMO进行交通仿真">
+             <span id="/posts/1628551222/" class="leancloud_visitors" data-flag-title="在Windows下使用SUMO进行交通仿真（1）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -457,6 +469,94 @@
 <h2 id="SUMO在Windows下的安装"><a href="#SUMO在Windows下的安装" class="headerlink" title="SUMO在Windows下的安装"></a>SUMO在Windows下的安装</h2><p>​        安装过程还是比较简单的，但之前花了比较多的时间下载了源码并尝试编译，遇到很多坑后才发现官方提供了Windows版本的binary version，下载使用即可。</p>
 <p>​        <a href="https://sourceforge.net/projects/sumo/files/sumo/version%200.19.0/sumo-winbin-0.19.0.zip/download" target="_blank" rel="noopener">https://sourceforge.net/projects/sumo/files/sumo/version%200.19.0/sumo-winbin-0.19.0.zip/download</a></p>
 <p>​        下载完成后解压，并且把解压出目录中的bin目录添加到环境变量中的Path变量即可。</p>
+<h2 id="SUMO仿真过程实例"><a href="#SUMO仿真过程实例" class="headerlink" title="SUMO仿真过程实例"></a>SUMO仿真过程实例</h2><p>​    此处以从OpenStreetMap导出地图为例，展示需要的工作流程。</p>
+<h3 id="Step-1：获取OpenStreetMap地图"><a href="#Step-1：获取OpenStreetMap地图" class="headerlink" title="Step 1：获取OpenStreetMap地图"></a>Step 1：获取OpenStreetMap地图</h3><p>​    此处不过多赘述，打开OpenStreetMap官网<a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">https://www.openstreetmap.org/</a>找到需要的区域后导出osm格式的地图即可。需要注意的是选择的区域大小有限制，不能过大。</p>
+<h3 id="Step-2：保存SUMO对OSM文件的预处理代码"><a href="#Step-2：保存SUMO对OSM文件的预处理代码" class="headerlink" title="Step 2：保存SUMO对OSM文件的预处理代码"></a>Step 2：保存SUMO对OSM文件的预处理代码</h3><p>​    根据官网所述，下载的osm文件除了路网信息之外还包含其他信息，需要做简单的处理。</p>
+<blockquote>
+<p>​    OSM-data not only contains the road network but also a wide range of additional polygons such as buildings and rivers. These polygons can be imported using POLYCONVERT and then added to a sumo-gui-configuration.</p>
+<p>​    导出的osm地图不仅包含路网信息也包含大量的别的模块例如建筑和河流，这些模块可以用polyconvert工具添加到sumo-gui配置文件中。</p>
+</blockquote>
+<p>​    因此，我们手动打开sumo\doc\userdoc\Networks\Import\OpenStreetMap.html文件，然后在打开的网页中间部分 Importing additional Polygons (Buildings, Water, etc.)的下面有一大段xml的代码，复制这些代码，保存为typemap.xml文件。在这里直接将代码复制过来，具体代码见文章最后。</p>
+<h3 id="Step-3：准备仿真所需的文件"><a href="#Step-3：准备仿真所需的文件" class="headerlink" title="Step 3：准备仿真所需的文件"></a>Step 3：准备仿真所需的文件</h3><h4 id="1-配置SUMO-TOOLS环境变量"><a href="#1-配置SUMO-TOOLS环境变量" class="headerlink" title="1.配置SUMO_TOOLS环境变量"></a>1.配置SUMO_TOOLS环境变量</h4><p>​    安装SUMO完成后，我们需要将SUMO提供的工具包路径加入环境变量。</p>
+<h4 id="2-生成路网文件"><a href="#2-生成路网文件" class="headerlink" title="2.生成路网文件"></a>2.生成路网文件</h4><p>​    我们利用SUMO提供的netconvert工具和下载好的osm地图文件生成.net.xml的路网文件。</p>
+<pre><code>    netconvert --osm-files map.osm -o map.net.xml
+</code></pre><h4 id="3-生成poly文件"><a href="#3-生成poly文件" class="headerlink" title="3.生成poly文件"></a>3.生成poly文件</h4><p>​    在这一步里，我们利用路网文件、osm地图文件和之前已经准备好的typemap.xml文件生成poly文件。</p>
+<pre><code>    polyconvert --net-file map.net.xml --osm-files map.osm --type-file typemap.xml -o map.poly.xml
+</code></pre><h4 id="4-生成旅程和路线文件"><a href="#4-生成旅程和路线文件" class="headerlink" title="4.生成旅程和路线文件"></a>4.生成旅程和路线文件</h4><p>​    路线文件的生成实质上是借助sumo/tools中的randomTrips.py，根据我们已经得到的路网文件来随机生成路线信息，这样就不需要手工设定路线。</p>
+<pre><code class="shell">    $ python &quot;%SUMO_TOOLS%/randomTrips.py&quot; -n map.net.xml -e 100 -l -o map.trip.xml
+</code></pre>
+<p>​    -n map.net.xml表示输入，-n表述输入的类型是net类型，其实-n等价于–net，-n是一种简写的方式。后面的-l -e 600是随机工具的配置，就像随机数生成函数需要一个种子一样。</p>
+<p>​    这一步执行完成后，得到了一个旅程文件，但实际上我们需要的是.rou.xml的路线文件，此时需要借助duarouter.exe进行操作。但我们并不需要直接运行duarouter.exe，而是再次运行randomTrips.py。</p>
+<pre><code class="shell">    $ python &quot;%SUMO_TOOLS%/randomTrips.py&quot; -n map.net.xml -r map.rou.xml -e 100 -l
+    calling  C:\Program Files (x86)\Eclipse\Sumo\bin\duarouter -n tongji.net.xml -r trips.trips.xml -o tongji.rou.xml --ignore-errors --begin 0 --end 100.0 --no-step-log --no-warnings
+    Success.
+</code></pre>
+<p>​    可以看到python程序自动帮我们调用了duarouter.exe。</p>
+<h4 id="5-编辑配置文件"><a href="#5-编辑配置文件" class="headerlink" title="5.编辑配置文件"></a>5.编辑配置文件</h4><p>​    新建一个名为test.sumocfg的文件，在该文件中键入如下的代码：</p>
+<pre><code class="xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;tongji.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;tongji.rou.xml&quot;/&gt;
+        &lt;additional-files value=&quot;tongji.poly.xml&quot;/&gt;
+        &lt;junction-files value=&quot;&quot;/&gt;
+    &lt;/input&gt;
+
+    &lt;output&gt;
+      &lt;netstate-dump value=&quot;tongji.sumo.tr&quot;/&gt;
+      &lt;tripinfo-output value=&quot;output-tripinfos.xml&quot;/&gt;
+      &lt;vehroute-output value=&quot;output-vehroutes.xml&quot;/&gt;
+    &lt;/output&gt;
+
+    &lt;time&gt;
+      &lt;begin value=&quot;0&quot;/&gt;
+      &lt;end value=&quot;10000&quot;/&gt;
+    &lt;/time&gt;
+
+&lt;/configuration&gt;
+</code></pre>
+<p>​    分别将所需的文件填入其中修改为对应的文件名即可。</p>
+<h3 id="Step-4：开始进行仿真"><a href="#Step-4：开始进行仿真" class="headerlink" title="Step 4：开始进行仿真"></a>Step 4：开始进行仿真</h3><p>​    有了上述的这些文件，我们就可以利用.sumocfg文件进行仿真了。仿真的方法有很多种，包括使用python代码调用仿真程序、手动进行仿真等，在这里也不多赘述。</p>
+<h2 id="附录1：typemap-xml"><a href="#附录1：typemap-xml" class="headerlink" title="附录1：typemap.xml"></a>附录1：typemap.xml</h2><p>​    注：此处代码是直接从SUMO包给出的文档中复制并转换成xml文档格式得到，因此在大多数情况下可以直接使用。</p>
+<pre><code class="xml">&lt;polygonTypes&gt;
+    &lt;polygonType id=&quot;waterway&quot;                name=&quot;water&quot;       color=&quot;.71,.82,.82&quot; layer=&quot;-4&quot;/&gt;
+    &lt;polygonType id=&quot;natural&quot;                 name=&quot;natural&quot;     color=&quot;.55,.77,.42&quot; layer=&quot;-4&quot;/&gt;
+    &lt;polygonType id=&quot;natural.water&quot;           name=&quot;water&quot;       color=&quot;.71,.82,.82&quot; layer=&quot;-4&quot;/&gt;
+    &lt;polygonType id=&quot;natural.wetland&quot;         name=&quot;water&quot;       color=&quot;.71,.82,.82&quot; layer=&quot;-4&quot;/&gt;
+    &lt;polygonType id=&quot;natural.wood&quot;            name=&quot;forest&quot;      color=&quot;.55,.77,.42&quot; layer=&quot;-4&quot;/&gt;
+    &lt;polygonType id=&quot;natural.land&quot;            name=&quot;land&quot;        color=&quot;.98,.87,.46&quot; layer=&quot;-4&quot;/&gt;
+
+    &lt;polygonType id=&quot;landuse&quot;                 name=&quot;landuse&quot;     color=&quot;.76,.76,.51&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.forest&quot;          name=&quot;forest&quot;      color=&quot;.55,.77,.42&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.park&quot;            name=&quot;park&quot;        color=&quot;.81,.96,.79&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.residential&quot;     name=&quot;residential&quot; color=&quot;.92,.92,.89&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.commercial&quot;      name=&quot;commercial&quot;  color=&quot;.82,.82,.80&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.industrial&quot;      name=&quot;industrial&quot;  color=&quot;.82,.82,.80&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.military&quot;        name=&quot;military&quot;    color=&quot;.60,.60,.36&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.farm&quot;            name=&quot;farm&quot;        color=&quot;.95,.95,.80&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.greenfield&quot;      name=&quot;farm&quot;        color=&quot;.95,.95,.80&quot; layer=&quot;-3&quot;/&gt;
+    &lt;polygonType id=&quot;landuse.village_green&quot;   name=&quot;farm&quot;        color=&quot;.95,.95,.80&quot; layer=&quot;-3&quot;/&gt;
+
+    &lt;polygonType id=&quot;tourism&quot;                 name=&quot;tourism&quot;     color=&quot;.81,.96,.79&quot; layer=&quot;-2&quot;/&gt;
+    &lt;polygonType id=&quot;military&quot;                name=&quot;military&quot;    color=&quot;.60,.60,.36&quot; layer=&quot;-2&quot;/&gt;
+    &lt;polygonType id=&quot;sport&quot;                   name=&quot;sport&quot;       color=&quot;.31,.90,.49&quot; layer=&quot;-2&quot;/&gt;
+    &lt;polygonType id=&quot;leisure&quot;                 name=&quot;leisure&quot;     color=&quot;.81,.96,.79&quot; layer=&quot;-2&quot;/&gt;
+    &lt;polygonType id=&quot;leisure.park&quot;            name=&quot;tourism&quot;     color=&quot;.81,.96,.79&quot; layer=&quot;-2&quot;/&gt;
+    &lt;polygonType id=&quot;aeroway&quot;                 name=&quot;aeroway&quot;     color=&quot;.50,.50,.50&quot; layer=&quot;-2&quot;/&gt;
+    &lt;polygonType id=&quot;aerialway&quot;               name=&quot;aerialway&quot;   color=&quot;.20,.20,.20&quot; layer=&quot;-2&quot;/&gt;
+
+    &lt;polygonType id=&quot;shop&quot;                    name=&quot;shop&quot;        color=&quot;.93,.78,1.0&quot; layer=&quot;-1&quot;/&gt;
+    &lt;polygonType id=&quot;historic&quot;                name=&quot;historic&quot;    color=&quot;.50,1.0,.50&quot; layer=&quot;-1&quot;/&gt;
+    &lt;polygonType id=&quot;man_made&quot;                name=&quot;building&quot;    color=&quot;1.0,.90,.90&quot; layer=&quot;-1&quot;/&gt;
+    &lt;polygonType id=&quot;building&quot;                name=&quot;building&quot;    color=&quot;1.0,.90,.90&quot; layer=&quot;-1&quot;/&gt;
+    &lt;polygonType id=&quot;amenity&quot;                 name=&quot;amenity&quot;     color=&quot;.93,.78,.78&quot; layer=&quot;-1&quot;/&gt;
+    &lt;polygonType id=&quot;amenity.parking&quot;         name=&quot;parking&quot;     color=&quot;.72,.72,.70&quot; layer=&quot;-1&quot;/&gt;
+    &lt;polygonType id=&quot;power&quot;                   name=&quot;power&quot;       color=&quot;.10,.10,.30&quot; layer=&quot;-1&quot; discard=&quot;true&quot;/&gt;
+    &lt;polygonType id=&quot;highway&quot;                 name=&quot;highway&quot;     color=&quot;.10,.10,.10&quot; layer=&quot;-1&quot; discard=&quot;true&quot;/&gt;
+
+    &lt;polygonType id=&quot;boundary&quot; name=&quot;boundary&quot;    color=&quot;1.0,.33,.33&quot; layer=&quot;0&quot; fill=&quot;false&quot; discard=&quot;true&quot;/&gt;
+    &lt;polygonType id=&quot;admin_level&quot; name=&quot;admin_level&quot;    color=&quot;1.0,.33,.33&quot; layer=&quot;0&quot; fill=&quot;false&quot; discard=&quot;true&quot;/&gt;
+&lt;/polygonTypes&gt;
+</code></pre>
 
       
     </div>
@@ -748,7 +848,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SUMO在Windows下的安装"><span class="nav-number">2.</span> <span class="nav-text">SUMO在Windows下的安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SUMO在Windows下的安装"><span class="nav-number">2.</span> <span class="nav-text">SUMO在Windows下的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SUMO仿真过程实例"><span class="nav-number">3.</span> <span class="nav-text">SUMO仿真过程实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1：获取OpenStreetMap地图"><span class="nav-number">3.1.</span> <span class="nav-text">Step 1：获取OpenStreetMap地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2：保存SUMO对OSM文件的预处理代码"><span class="nav-number">3.2.</span> <span class="nav-text">Step 2：保存SUMO对OSM文件的预处理代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3：准备仿真所需的文件"><span class="nav-number">3.3.</span> <span class="nav-text">Step 3：准备仿真所需的文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-配置SUMO-TOOLS环境变量"><span class="nav-number">3.3.1.</span> <span class="nav-text">1.配置SUMO_TOOLS环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-生成路网文件"><span class="nav-number">3.3.2.</span> <span class="nav-text">2.生成路网文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-生成poly文件"><span class="nav-number">3.3.3.</span> <span class="nav-text">3.生成poly文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-生成旅程和路线文件"><span class="nav-number">3.3.4.</span> <span class="nav-text">4.生成旅程和路线文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-编辑配置文件"><span class="nav-number">3.3.5.</span> <span class="nav-text">5.编辑配置文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-4：开始进行仿真"><span class="nav-number">3.4.</span> <span class="nav-text">Step 4：开始进行仿真</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录1：typemap-xml"><span class="nav-number">4.</span> <span class="nav-text">附录1：typemap.xml</span></a></li></ol></div>
             
 
           </div>
